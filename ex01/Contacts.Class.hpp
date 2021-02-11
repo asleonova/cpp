@@ -1,7 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Contacts.Class.hpp                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/11 18:00:26 by dbliss            #+#    #+#             */
+/*   Updated: 2021/02/11 18:00:28 by dbliss           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef CONTACT_CLASS_H
 # define CONTACT_CLASS_H
 
 #include <iostream>
+# include <iomanip>
+# include <string>
 
 class Contact {
 
@@ -17,6 +31,7 @@ private:
     std::string favorite_meal;
     std::string underwear_color;
     std::string darkerst_secret;
+
 public:
     bool added;
     Contact(void);

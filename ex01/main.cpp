@@ -1,39 +1,48 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/11 18:00:41 by dbliss            #+#    #+#             */
+/*   Updated: 2021/02/11 18:00:43 by dbliss           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <iostream>
 #include <string>
 #include <cctype>
-//#include "PhoneBook.Class.hpp"
 #include "Contacts.Class.hpp"
 #include "Phonebook.Class.hpp"
 
 int main(void)
 {
-   // Contact contact;
     Phonebook contact;
-    //PhoneBook contact_list;
     std::string u_input;
-
-    std::cout << "/* ***************************************** */" << std::endl;
-    std::cout << "/*     Welcome to AWESOME Phonebook          */" << std::endl;
-    std::cout << "/*     ________________________________      */" << std::endl;
-    std::cout << "/*     it supports the following commands:   */" << std::endl;
-    std::cout << "/*     ________________________________      */" << std::endl;
-    std::cout << "/* ADD: adds a new contact’s information;    */" << std::endl;
-    std::cout << "/*      is defined by the following fields:  */" << std::endl;
-    std::cout << "/*                                           */" << std::endl;
-    std::cout << "/*      first name       phone number        */" << std::endl;
-    std::cout << "/*      last name        birthday date       */" << std::endl;
-    std::cout << "/*      nickname         favorite meal       */" << std::endl;
-    std::cout << "/*      login            underwear color     */" << std::endl;
-    std::cout << "/*      postal address   darkest secret      */" << std::endl;
-    std::cout << "/*      email address                        */" << std::endl;
-    std::cout << "/*     ________________________________      */" << std::endl;
-    std::cout << "/* SEARCH: program will display a list of    */" << std::endl;
-    std::cout << "/*         the available non-empty contacts  */" << std::endl;
-    std::cout << "/*     ________________________________      */" << std::endl;
-    std::cout << "/* EXIT: program quits and the contacts      */" << std::endl;
-    std::cout << "/*       are lost forever                    */" << std::endl;
-    std::cout << "/* ***************************************** */" << std::endl;
+    std::cout << "\033[1;35m/* ***************************************** */\033[0m" << std::endl;
+    std::cout << "\033[1;35m/*\033[0m     Welcome to \033[1;31mAWESOME\033[0m Phonebook          \033[1;35m*/\033[0m" << std::endl;
+    std::cout << "\033[1;35m/*\033[0m     ________________________________      \033[1;35m*/\033[0m" << std::endl;
+    std::cout << "\033[1;35m/*\033[0m     it supports the following commands:   \033[1;35m*/\033[0m" << std::endl;
+    std::cout << "\033[1;35m/*\033[0m     ________________________________      \033[1;35m*/\033[0m" << std::endl;
+    std::cout << "\033[1;35m/*\033[0m \033[1;32mADD:\033[0m adds a new contact’s information;    \033[1;35m*/\033[0m" << std::endl;
+    std::cout << "\033[1;35m/*\033[0m      is defined by the following fields:  \033[1;35m*/\033[0m" << std::endl;
+    std::cout << "\033[1;35m/*\033[0m                                           \033[1;35m*/\033[0m" << std::endl;
+    std::cout << "\033[1;35m/*\033[0m      first name       phone number        \033[1;35m*/\033[0m" << std::endl;
+    std::cout << "\033[1;35m/*\033[0m      last name        birthday date       \033[1;35m*/\033[0m" << std::endl;
+    std::cout << "\033[1;35m/*\033[0m      nickname         favorite meal       \033[1;35m*/\033[0m" << std::endl;
+    std::cout << "\033[1;35m/*\033[0m      login            underwear color     \033[1;35m*/\033[0m" << std::endl;
+    std::cout << "\033[1;35m/*\033[0m      postal address   darkest secret      \033[1;35m*/\033[0m" << std::endl;
+    std::cout << "\033[1;35m/*\033[0m      email address                        \033[1;35m*/\033[0m" << std::endl;
+    std::cout << "\033[1;35m/*\033[0m     ________________________________      \033[1;35m*/\033[0m" << std::endl;
+    std::cout << "\033[1;35m/*\033[0m \033[1;32mSEARCH:\033[0m program will display a list of    \033[1;35m*/\033[0m" << std::endl;
+    std::cout << "\033[1;35m/*\033[0m         the available non-empty contacts  \033[1;35m*/\033[0m" << std::endl;
+    std::cout << "\033[1;35m/*\033[0m     ________________________________      \033[1;35m*/\033[0m" << std::endl;
+    std::cout << "\033[1;35m/*\033[0m \033[1;32mEXIT:\033[0m program quits and the contacts      \033[1;35m*/\033[0m" << std::endl;
+    std::cout << "\033[1;35m/*\033[0m       are lost forever                    \033[1;35m*/\033[0m" << std::endl;
+    std::cout << "\033[1;35m/* ***************************************** */\033[0m" << std::endl;
     std::cout << "    P.S.: PHONEBOOK SUPPORTS ONLY 8 CONTACTS   " << std::endl;
+    std::cout << std::endl << "Let's start: " << std::endl;
     std::cout << "> "; 
     while (1)
     {
@@ -47,7 +56,7 @@ int main(void)
         else if (u_input.compare("EXIT") == 0)
             return (0);
         else
-            std::cout << "Ooops, it's not a valid command :( Try ADD, SEARCH or EXIT" << std::endl;
+            std::cout << "\033[1;31mOoops, it's not a valid command :( Try ADD, SEARCH or EXIT\033[0m" << std::endl;
         std::cout << "> "; 
     }
     return (0);

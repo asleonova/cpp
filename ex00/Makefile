@@ -5,18 +5,16 @@
 #                                                     +:+ +:+         +:+      #
 #    By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/02/11 18:00:49 by dbliss            #+#    #+#              #
-#    Updated: 2021/02/11 18:00:51 by dbliss           ###   ########.fr        #
+#    Created: 2021/02/11 17:59:59 by dbliss            #+#    #+#              #
+#    Updated: 2021/02/11 18:00:02 by dbliss           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = phonebook
+NAME = megaphone
 
 INCLUDES = ./
 
-HEADER = ./Contacts.Class.hpp ./Phonebook.Class.hpp
-		
-SRCS = ./main.cpp ./Contacts.Class.cpp ./Phonebook.Class.cpp 
+SRCS = ./megaphone.cpp
 
 OBJ = $(SRCS:%.cpp=%.o)
 
@@ -27,7 +25,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	clang++ -o $(NAME) $(OBJ)
 
-%.o: %.c $(HEADER) 
+%.o: %.c 
 	clang++ -c $(CFLAGS) -I $(INCLUDES) $< -o $@
 
 clean:
