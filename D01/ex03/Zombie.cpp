@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pony.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/13 16:45:13 by dbliss            #+#    #+#             */
-/*   Updated: 2021/02/13 21:24:24 by dbliss           ###   ########.fr       */
+/*   Created: 2021/02/13 17:52:59 by dbliss            #+#    #+#             */
+/*   Updated: 2021/02/13 20:20:06 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Pony.hpp"
+#include "Zombie.hpp"
 
-Pony::Pony()
+Zombie::Zombie()
 {
-    this->_breed = "test";
-    this->_color = "test";
-    this->_sex = "test";
+    
 }
 
-Pony::Pony(std::string breed, std::string color, std::string sex)
+Zombie::Zombie(std::string name, std::string type)
 {
-    std::cout << "Pony " << this->_breed << " is born " << std::endl; 
-    this->_breed = breed;
-    this->_color = color;
-    this->_sex = sex;
+    this->name = name;
+    this->type = type;
 }
 
-Pony::~Pony()
+Zombie::~Zombie()
 {
-    std::cout << "Pony " << this->_breed << " died " << std::endl;
+
 }
 
+void Zombie::announce(void)
+{
+    std::cout << "\033[1;32mzombie name:\033[0m " << std::setw(6) << this->name << "  \033[1;32mtype:\033[0m " << std::setw(6) << this->type << " \033[1;31mBraiiiiiiinnnssss...\033[0m" << std::endl;
+}

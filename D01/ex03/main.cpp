@@ -1,34 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/13 17:52:59 by dbliss            #+#    #+#             */
-/*   Updated: 2021/02/13 21:15:38 by dbliss           ###   ########.fr       */
+/*   Created: 2021/02/13 17:53:38 by dbliss            #+#    #+#             */
+/*   Updated: 2021/02/13 21:18:43 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
+#include "ZombieHorde.hpp"
+#include <unistd.h>
 
-Zombie::Zombie()
+int main(void)
 {
-    
-}
+    ZombieHorde zombieHorde(15);
 
-Zombie::Zombie(std::string name, std::string type)
-{
-    this->name = name;
-    this->type = type;
-}
+    std::cout << "\033[1;35mCreating zombies:\033[0m" << std::endl;
+    zombieHorde.announce();    
+    //sleep(100);
 
-Zombie::~Zombie()
-{
-
-}
-
-void Zombie::announce(void)
-{
-    std::cout << "\033[1;32mzombie name:\033[0m " << std::setw(6) << this->name << "  \033[1;32mtype:\033[0m " << std::setw(6) << this->type << " \033[1;31mBraiiiiiiinnnssss...\033[0m" << std::endl;
 }

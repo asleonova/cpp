@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/13 17:52:59 by dbliss            #+#    #+#             */
-/*   Updated: 2021/02/13 21:15:38 by dbliss           ###   ########.fr       */
+/*   Created: 2021/02/13 17:53:11 by dbliss            #+#    #+#             */
+/*   Updated: 2021/02/13 20:20:13 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef ZOMBIE_H
+# define ZOMBIE_H
 
-Zombie::Zombie()
+# include <iostream>
+# include <iomanip>
+
+class Zombie
 {
-    
-}
+private:
+    std::string type;
+    std::string name;
+public:
+    Zombie();
+    Zombie* newZombie(std::string name);
+    Zombie(std::string name, std::string type);
+    void announce(void);
+    ~Zombie();
+};
 
-Zombie::Zombie(std::string name, std::string type)
-{
-    this->name = name;
-    this->type = type;
-}
-
-Zombie::~Zombie()
-{
-
-}
-
-void Zombie::announce(void)
-{
-    std::cout << "\033[1;32mzombie name:\033[0m " << std::setw(6) << this->name << "  \033[1;32mtype:\033[0m " << std::setw(6) << this->type << " \033[1;31mBraiiiiiiinnnssss...\033[0m" << std::endl;
-}
+#endif
