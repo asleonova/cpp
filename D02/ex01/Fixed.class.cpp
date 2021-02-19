@@ -24,7 +24,7 @@ Fixed::Fixed(const int n)
 
 Fixed::Fixed(const float n)
 {
-    this->_n = round(n * (1 << this->_bit));
+    this->_n = roundf(n * (1 << this->_bit));
 }
 
 Fixed:: ~Fixed()
@@ -63,7 +63,7 @@ int Fixed::toInt(void) const
 
 float Fixed::toFloat(void) const
 {
-    return(this->_n);
+    return float(this->_n) / float(1 << this->_bit);
 }
 
 std::ostream & operator<<(std::ostream & o, Fixed const & src)
