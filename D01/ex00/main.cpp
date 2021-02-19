@@ -6,7 +6,7 @@
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/13 16:45:24 by dbliss            #+#    #+#             */
-/*   Updated: 2021/02/13 16:45:27 by dbliss           ###   ########.fr       */
+/*   Updated: 2021/02/17 14:13:21 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void ponyOnTheStack(void)
 {
-   // Pony pony("Fell", "black", "male");
     Pony pony = Pony("Fell", "black", "male");
 }
 
