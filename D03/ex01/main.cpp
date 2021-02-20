@@ -6,11 +6,12 @@
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/20 16:22:07 by dbliss            #+#    #+#             */
-/*   Updated: 2021/02/20 21:32:17 by dbliss           ###   ########.fr       */
+/*   Updated: 2021/02/20 22:00:30 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.Class.hpp"
+#include "ScavTrap.Class.hpp"
 #include <unistd.h>
 
 void test1(void)
@@ -51,6 +52,22 @@ void test3(void)
 
 }
 
+void test4(void)
+{
+    ScavTrap robot("Erlick");
+    ScavTrap robotClone(robot);
+    ScavTrap robotCopy("Copy");
+    robotCopy = robot;
+    ScavTrap robot2("Jin Yang");
+    robot.challengeNewComer();
+    sleep(1);
+    robotCopy.challengeNewComer();
+    sleep(1);
+    robotClone.challengeNewComer();
+    sleep(1);
+    robotCopy.challengeNewComer();
+}
+
 int main(void)
 {
     std::cout << "\x1b[5;36mBASIC TEST STARTED!\x1b[0m" << std::endl;
@@ -65,5 +82,8 @@ int main(void)
     test3();
     std::cout << "\x1b[1;32mMAX_HEALING TEST DONE!\x1b[0m" << std::endl << std::endl;
     sleep(5);
+    std::cout << "\x1b[5;36mCHALLENGES TEST STARTED!\x1b[0m" << std::endl;
+    test4();
+    std::cout << "\x1b[1;32mCHALLENGES TEST DONE!\x1b[0m" << std::endl << std::endl;
     return 0;  
 }
