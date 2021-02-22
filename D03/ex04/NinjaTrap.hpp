@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.Class.hpp                                 :+:      :+:    :+:   */
+/*   NinjaTrap.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,21 +10,25 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_CLASS_H
-# define SCAVTRAP_CLASS_H
+#ifndef NINJA_TRAP_H
+# define NINJA_TRAP_H
 
 #include <iostream>
 #include "ClapTrap.Class.hpp"
+#include "FragTrap.Class.hpp"
+#include "ScavTrap.Class.hpp"
 
-class ScavTrap : public ClapTrap
+class NinjaTrap : public ClapTrap
 {
     public:
-        ScavTrap(std::string name);
-        ScavTrap(ScavTrap const & src);
-        ~ScavTrap();NinjaTrap.cpp
-        ScavTrap & operator=(ScavTrap const & rhs);
+        NinjaTrap(std::string name);
+        NinjaTrap(NinjaTrap const & src);
+        ~NinjaTrap();
+        NinjaTrap & operator=(NinjaTrap const & rhs);
         
-        void challengeNewComer(void);
+        void ninjaShoebox(FragTrap &target);
+        void ninjaShoebox(ScavTrap &target);
+        void ninjaShoebox(NinjaTrap &target);
 };
 
 #endif
