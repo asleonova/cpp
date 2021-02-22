@@ -13,36 +13,17 @@
 #ifndef FRAGTRAP_CLASS_H
 # define FRAGTRAP_CLASS_H
 
+#include "ClapTrap.Class.hpp"
 #include <iostream>
 
-class FragTrap
+class FragTrap : public ClapTrap
 {
-private:
-    int _hitPoints;
-    int _maxHitPoints;
-    int _energyPoints;
-    int _maxEnergyPoints;
-    int _level;
-    std::string _name; // should be a parameter of a constructor;
-    int _meAttackDamage;
-    int _raAttackDamage;
-    int _armorDamageReduction;
-
-public:
-    FragTrap(std::string name);
-    FragTrap(FragTrap const & src);
-    ~FragTrap();
-    std::string getName(void) const;
-    int getEnergyPoints(void) const;
-    int getHitPoints(void) const;
-    FragTrap & operator=(FragTrap const & rhs);
-    void rangedAttack(std::string const & target);
-    void meleeAttack(std::string const & target);
-    void takeDamage(unsigned int amount);
-    void beRepaired(unsigned int amount);
-    void vaulthunter_dot_exe(std::string const & target);
+    public:
+        FragTrap(std::string name);
+        FragTrap(FragTrap const & src);
+        ~FragTrap();
+        FragTrap & operator=(FragTrap const & rhs);
+        void vaulthunter_dot_exe(std::string const & target);
 };
-
-std::ostream & operator<<(std::ostream & o, FragTrap const & i);
 
 #endif
