@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   NinjaTrap.hpp                                 :+:      :+:    :+:   */
+/*   SuperTrap.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,25 +10,26 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef NINJA_TRAP_H
-# define NINJA_TRAP_H
+#ifndef SUPER_TRAP_H
+# define SUPER_TRAP_H
 
 #include <iostream>
 #include "ClapTrap.Class.hpp"
 #include "FragTrap.Class.hpp"
 #include "ScavTrap.Class.hpp"
+#include "NinjaTrap.hpp"
 
-class NinjaTrap : virtual public ClapTrap
+class SuperTrap : public FragTrap, public NinjaTrap
 {
     public:
-        NinjaTrap(std::string name);
-        NinjaTrap(NinjaTrap const & src);
-        ~NinjaTrap();
-        NinjaTrap & operator=(NinjaTrap const & rhs);
-        
-        void ninjaShoebox(FragTrap &target);
-        void ninjaShoebox(ScavTrap &target);
-        void ninjaShoebox(NinjaTrap &target);
+        SuperTrap(std::string name);
+        SuperTrap(SuperTrap const & src);
+        ~SuperTrap();
+        SuperTrap & operator=(SuperTrap const & rhs);
+        void rangedAttack(std::string const & target);
+        void meleeAttack(std::string const & target);
+
+
 };
 
 #endif
