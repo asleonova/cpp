@@ -10,7 +10,7 @@ Sorcerer::Sorcerer(std::string name, std::string title)
 
 Sorcerer::Sorcerer(Sorcerer const & src)
 {
-    std::cout << "Copy constructor called" << std::endl;
+    std::cout << "Sorcerer Copy constructor called" << std::endl;
     *this = src;
 }
 
@@ -23,7 +23,7 @@ Sorcerer & Sorcerer::operator=(Sorcerer const & rhs)
 
 Sorcerer::~Sorcerer()
 {
-    std::cout << this->_name << ", " << this->_title << " is dead. Consequences will never be the same!" << std::endl;
+    std::cout << this->_name << ", " << this->_title << ", is dead. Consequences will never be the same!" << std::endl;
 }
 
 std::string Sorcerer::getName() const
@@ -34,6 +34,11 @@ std::string Sorcerer::getName() const
 std::string Sorcerer::getTitle() const
 {
     return (this->_title);
+}
+
+void Sorcerer::polymorph(Victim const & victim) const
+{
+   victim.getPolymorphed(); 
 }
 
 std::ostream & operator<<(std::ostream & o, Sorcerer const & rhs)

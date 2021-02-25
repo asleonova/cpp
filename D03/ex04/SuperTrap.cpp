@@ -27,7 +27,7 @@ SuperTrap::SuperTrap(std::string name) : FragTrap(name), NinjaTrap(name)
     std::cout << "SuperTrap constructor called" << std::endl;
 }
 
-SuperTrap::SuperTrap(SuperTrap const & src) : FragTrap(_name), NinjaTrap(_name)
+SuperTrap::SuperTrap(SuperTrap const & src) : FragTrap(src), NinjaTrap(src)
 {
     std::cout << "SuperTrap copy constructor called" << std::endl;
     *this = src;
@@ -63,5 +63,5 @@ void SuperTrap::rangedAttack(std::string const & target)
 
 void SuperTrap::meleeAttack(std::string const & target)
 {
-    NinjaTrap::rangedAttack(target);
+    NinjaTrap::meleeAttack(target);
 }
