@@ -15,6 +15,7 @@
 
 SuperTrap::SuperTrap(std::string name) : FragTrap(name), NinjaTrap(name)
 {
+    this->type = "Superrrrr";
     this->_hitPoints = FragTrap::_hitPoints;
     this->_maxHitPoints = FragTrap::_maxHitPoints;
     this->_energyPoints = NinjaTrap::_energyPoints;

@@ -6,13 +6,13 @@
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/20 16:22:07 by dbliss            #+#    #+#             */
-/*   Updated: 2021/02/20 22:00:30 by dbliss           ###   ########.fr       */
+/*   Updated: 2021/03/01 13:53:29 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.Class.hpp"
-#include "ScavTrap.Class.hpp"
-#include "ClapTrap.Class.hpp"
+#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
+#include "ClapTrap.hpp"
 #include "NinjaTrap.hpp"
 #include "SuperTrap.hpp"
 #include <unistd.h>
@@ -20,11 +20,11 @@
 void test(void)
 {
     SuperTrap super("Super");
-  //  SuperTrap super1("Super1");
     super.rangedAttack(super.getName());
-   // super1.takeDamage(20);
-   super.vaulthunter_dot_exe(super.getName());
-    //super1.ninjaShoebox(super);
+    super.vaulthunter_dot_exe(super.getName());
+    super.meleeAttack("enemy");
+    // super.ninjaShoebox("enemy1");
+    // super.ninjaShoebox("enemy2");
 
 }
 // void test1(void)

@@ -14,9 +14,9 @@
 # define NINJA_TRAP_H
 
 #include <iostream>
-#include "ClapTrap.Class.hpp"
-#include "FragTrap.Class.hpp"
-#include "ScavTrap.Class.hpp"
+#include "ClapTrap.hpp"
+#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
 class NinjaTrap : virtual public ClapTrap
 {

@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.Class.cpp                                 :+:      :+:    :+:   */
+/*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/19 22:09:52 by dbliss            #+#    #+#             */
-/*   Updated: 2021/02/20 21:13:26 by dbliss           ###   ########.fr       */
+/*   Created: 2021/03/01 13:37:15 by dbliss            #+#    #+#             */
+/*   Updated: 2021/03/01 13:37:31 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.Class.hpp"
+#include "FragTrap.hpp"
 #include <time.h>
 
 FragTrap::FragTrap(std::string name)
 {
+    this->type = "FR4G-TP";
     this->_hitPoints = 100;
     this->_maxHitPoints = 100;
     this->_energyPoints = 100;
@@ -59,7 +60,6 @@ FragTrap:: ~FragTrap()
 
 void FragTrap::vaulthunter_dot_exe(std::string const & target)
 {
-    //srand(time(0));
     std::string attackType[5] = {
         "Attack with \x1b[1;31m red Pony\x1b[0m",
         "Attack with \x1b[1;32m green Pony\x1b[0m",

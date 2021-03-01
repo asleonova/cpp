@@ -14,9 +14,9 @@
 # define SUPER_TRAP_H
 
 #include <iostream>
-#include "ClapTrap.Class.hpp"
-#include "FragTrap.Class.hpp"
-#include "ScavTrap.Class.hpp"
+#include "ClapTrap.hpp"
+#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 #include "NinjaTrap.hpp"
 
 class SuperTrap : public FragTrap, public NinjaTrap
