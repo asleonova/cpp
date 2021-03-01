@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.Class.cpp                                 :+:      :+:    :+:   */
+/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/20 21:02:24 by dbliss            #+#    #+#             */
-/*   Updated: 2021/02/20 21:47:59 by dbliss           ###   ########.fr       */
+/*   Created: 2021/03/01 12:55:28 by dbliss            #+#    #+#             */
+/*   Updated: 2021/03/01 13:10:53 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.Class.hpp"
+#include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap()
 {
@@ -58,12 +58,12 @@ int ClapTrap::getEnergyPoints(void) const
 
 void ClapTrap::rangedAttack(std::string const & target)
 {
-    std::cout << "\x1b[4;35mClapTrap\x1b[0m\x1b[1;35m " << this->_name << "\x1b[0m attacks \x1b[1;33m" << target << "\x1b[0m at range, causing \x1b[1;31m" << this->_raAttackDamage << "\x1b[0m points of damage!" << std::endl;
+    std::cout << "\x1b[4;35m" << this->type << "\x1b[0m\x1b[1;35m " << this->_name << "\x1b[0m attacks \x1b[1;33m" << target << "\x1b[0m at range, causing \x1b[1;31m" << this->_raAttackDamage << "\x1b[0m points of damage!" << std::endl;
 }
 
 void ClapTrap::meleeAttack(std::string const & target)
 {
-    std::cout << "\x1b[4;35mClapTrap\x1b[0m\x1b[1;35m " << this->_name << "\x1b[0m attacks \x1b[1;33m" << target << "\x1b[0m at range, causing \x1b[1;31m" << this->_meAttackDamage << "\x1b[0m points of damage!" << std::endl; 
+    std::cout << "\x1b[4;35m" << this->type << "\x1b[0m\x1b[1;35m " << this->_name << "\x1b[0m attacks \x1b[1;33m" << target << "\x1b[0m at range, causing \x1b[1;31m" << this->_meAttackDamage << "\x1b[0m points of damage!" << std::endl; 
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
@@ -76,7 +76,7 @@ void ClapTrap::takeDamage(unsigned int amount)
         this->_hitPoints -= (int)amount;
     else
         this->_hitPoints = 0;
-    std::cout << "\x1b[4;35mClapTrap\x1b[0m\x1b[1;35m " << this->_name << "\x1b[0m takes \x1b[1;33m" << amount << "\x1b[0m of damage. Current HP level is:  \x1b[1;31m" << this->_hitPoints << "\x1b[0m" << std::endl; 
+    std::cout << "\x1b[4;35m" << this->type << "\x1b[0m\x1b[1;35m " << this->_name << "\x1b[0m takes \x1b[1;33m" << amount << "\x1b[0m of damage. Current HP level is:  \x1b[1;31m" << this->_hitPoints << "\x1b[0m" << std::endl; 
 }
 
 void ClapTrap::beRepaired(unsigned int amount)

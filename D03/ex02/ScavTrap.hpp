@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.Class.hpp                                 :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/20 21:02:32 by dbliss            #+#    #+#             */
-/*   Updated: 2021/02/20 21:47:12 by dbliss           ###   ########.fr       */
+/*   Created: 2021/03/01 12:57:55 by dbliss            #+#    #+#             */
+/*   Updated: 2021/03/01 12:58:41 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_CLASS_H
-# define SCAVTRAP_CLASS_H
+#ifndef SCAV_TRAP_H
+# define SCAV_TRAP_H
 
 #include <iostream>
-#include "ClapTrap.Class.hpp"
+#include "ClapTrap.hpp"
 
 class ScavTrap : public ClapTrap
 {
     public:
         ScavTrap(std::string name);
         ScavTrap(ScavTrap const & src);
-        ~ScavTrap();NinjaTrap.cpp
+        ~ScavTrap();
         ScavTrap & operator=(ScavTrap const & rhs);
         
         void challengeNewComer(void);

@@ -6,13 +6,13 @@
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/20 16:22:07 by dbliss            #+#    #+#             */
-/*   Updated: 2021/02/20 22:00:30 by dbliss           ###   ########.fr       */
+/*   Updated: 2021/03/01 13:12:57 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.Class.hpp"
-#include "ScavTrap.Class.hpp"
-#include "ClapTrap.Class.hpp"
+#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
+#include "ClapTrap.hpp"
 #include <unistd.h>
 
 void test1(void)
@@ -22,10 +22,10 @@ void test1(void)
     robotS.rangedAttack(robotF.getName());
     sleep(1);
     robotF.takeDamage(20);
-    sleep(1)
+    sleep(1);
     robotF.meleeAttack(robotS.getName());
     sleep(1);
-    robotF.takeDamage(30);
+    robotS.takeDamage(30);
     sleep(1);
     robotF.vaulthunter_dot_exe(robotS.getName());
     sleep(1);

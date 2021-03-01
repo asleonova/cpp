@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.Class.cpp                                 :+:      :+:    :+:   */
+/*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/19 22:09:52 by dbliss            #+#    #+#             */
-/*   Updated: 2021/02/20 21:13:26 by dbliss           ###   ########.fr       */
+/*   Created: 2021/03/01 12:56:48 by dbliss            #+#    #+#             */
+/*   Updated: 2021/03/01 13:08:50 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.Class.hpp"
+#include "FragTrap.hpp"
 #include <time.h>
 
 FragTrap::FragTrap(std::string name)
 {
+    this->type = "FR4G-TP";
     this->_hitPoints = 100;
     this->_maxHitPoints = 100;
     this->_energyPoints = 100;
