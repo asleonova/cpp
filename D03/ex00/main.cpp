@@ -6,11 +6,11 @@
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/20 16:22:07 by dbliss            #+#    #+#             */
-/*   Updated: 2021/02/20 21:32:17 by dbliss           ###   ########.fr       */
+/*   Updated: 2021/03/01 12:37:54 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.Class.hpp"
+#include "FragTrap.hpp"
 #include <unistd.h>
 
 void test1(void)

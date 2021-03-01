@@ -1,20 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.Class.cpp                                 :+:      :+:    :+:   */
+/*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/19 22:09:52 by dbliss            #+#    #+#             */
-/*   Updated: 2021/02/20 20:03:28 by dbliss           ###   ########.fr       */
+/*   Created: 2021/03/01 12:35:00 by dbliss            #+#    #+#             */
+/*   Updated: 2021/03/01 12:35:08 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.Class.hpp"
+#include "FragTrap.hpp"
 #include <time.h>
 
 FragTrap::FragTrap(std::string name) :
-//_name(name),
 _hitPoints(100),
 _maxHitPoints(100),
 _energyPoints(100),
@@ -30,7 +29,7 @@ _armorDamageReduction(5)
 
 FragTrap::FragTrap(FragTrap const & src)
 {
-    std::cout << "Copy constructor called" << std::endl;
+    std::cout << "FragTrap Copy constructor called" << std::endl;
     *this = src;
 }
 
