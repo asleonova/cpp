@@ -6,13 +6,13 @@
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/20 16:22:07 by dbliss            #+#    #+#             */
-/*   Updated: 2021/02/20 22:00:30 by dbliss           ###   ########.fr       */
+/*   Updated: 2021/03/01 13:20:06 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.Class.hpp"
-#include "ScavTrap.Class.hpp"
-#include "ClapTrap.Class.hpp"
+#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
+#include "ClapTrap.hpp"
 #include "NinjaTrap.hpp"
 #include <unistd.h>
 

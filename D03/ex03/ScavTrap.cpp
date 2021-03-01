@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.Class.cpp                                 :+:      :+:    :+:   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/20 21:02:24 by dbliss            #+#    #+#             */
-/*   Updated: 2021/02/20 21:47:59 by dbliss           ###   ########.fr       */
+/*   Created: 2021/03/01 13:19:05 by dbliss            #+#    #+#             */
+/*   Updated: 2021/03/01 13:24:17 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.Class.hpp"
+#include "ScavTrap.hpp"
 #include <time.h>
 
 ScavTrap::ScavTrap(std::string name)
 {
+    this->type = "SC4V-TP";
     this->_hitPoints = 100;
     this->_maxHitPoints = 50;
     this->_energyPoints = 50;

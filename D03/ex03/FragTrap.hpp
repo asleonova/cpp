@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.Class.hpp                                 :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/19 22:10:01 by dbliss            #+#    #+#             */
-/*   Updated: 2021/02/20 20:12:05 by dbliss           ###   ########.fr       */
+/*   Updated: 2021/03/01 13:17:41 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_CLASS_H
-# define FRAGTRAP_CLASS_H
+#ifndef FRAG_TRAP_H
+# define FRAG_TRAP_H
 
-#include "ClapTrap.Class.hpp"
+#include "ClapTrap.hpp"
 #include <iostream>
 
 class FragTrap : public ClapTrap

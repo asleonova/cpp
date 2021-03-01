@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.Class.hpp                                 :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/20 21:02:32 by dbliss            #+#    #+#             */
-/*   Updated: 2021/02/20 21:47:12 by dbliss           ###   ########.fr       */
+/*   Created: 2021/03/01 13:18:41 by dbliss            #+#    #+#             */
+/*   Updated: 2021/03/01 13:19:16 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_CLASS_H
-# define SCAVTRAP_CLASS_H
+#ifndef SCAV_TRAP_H
+# define SCAV_TRAP_H
 
 #include <iostream>
-#include "ClapTrap.Class.hpp"
+#include "ClapTrap.hpp"
 
 class ScavTrap : public ClapTrap
 {

@@ -15,6 +15,7 @@
 
 NinjaTrap::NinjaTrap(std::string name)
 {
+    this->type = "Ninja";
     this->_hitPoints = 60;
     this->_maxHitPoints = 60;
     this->_energyPoints = 120;
@@ -80,7 +81,7 @@ void NinjaTrap::ninjaShoebox(FragTrap & target)
     };
     int i = rand() % 10;
     int j = rand() % 5;
-    std::cout << "\x1b[1;36mNinja " << this->_name << "\x1b[0m attacks \x1b[4;35mFragTrap " << target.getName() << "\x1b[0m with a special random shoebox attack called: " 
+    std::cout << "\x1b[1;36m" << this->type << " " << this->_name << "\x1b[0m attacks \x1b[4;35mFragTrap " << target.getName() << "\x1b[0m with a special random shoebox attack called: " 
     << specialAttack[i] << " causing\x1b[1;33m " << damage[j] << "\x1b[0m points of damage" << std::endl;  
     target.takeDamage(damage[j]);
 }
