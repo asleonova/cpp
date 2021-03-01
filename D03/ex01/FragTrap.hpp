@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.Class.hpp                                 :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/19 22:10:01 by dbliss            #+#    #+#             */
-/*   Updated: 2021/02/20 20:12:05 by dbliss           ###   ########.fr       */
+/*   Created: 2021/03/01 12:46:36 by dbliss            #+#    #+#             */
+/*   Updated: 2021/03/01 12:47:18 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_CLASS_H
-# define FRAGTRAP_CLASS_H
+#ifndef FRAG_TRAP_H
+# define FRAG_TRAP_H
 
 #include <iostream>
 
@@ -31,11 +31,11 @@ private:
 public:
     FragTrap(std::string name);
     FragTrap(FragTrap const & src);
+    FragTrap & operator=(FragTrap const & rhs);
     ~FragTrap();
     std::string getName(void) const;
     int getEnergyPoints(void) const;
     int getHitPoints(void) const;
-    FragTrap & operator=(FragTrap const & rhs);
     void rangedAttack(std::string const & target);
     void meleeAttack(std::string const & target);
     void takeDamage(unsigned int amount);

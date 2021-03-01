@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.Class.cpp                                 :+:      :+:    :+:   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/20 21:02:24 by dbliss            #+#    #+#             */
-/*   Updated: 2021/02/20 21:47:59 by dbliss           ###   ########.fr       */
+/*   Updated: 2021/03/01 12:48:54 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.Class.hpp"
+#include "ScavTrap.hpp"
 #include <time.h>
 
 ScavTrap::ScavTrap(std::string name) :
