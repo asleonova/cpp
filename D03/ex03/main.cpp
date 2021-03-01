@@ -6,7 +6,7 @@
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/20 16:22:07 by dbliss            #+#    #+#             */
-/*   Updated: 2021/03/01 13:20:06 by dbliss           ###   ########.fr       */
+/*   Updated: 2021/03/01 16:08:44 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,7 +129,7 @@ int main(void)
     std::cout << "\x1b[1;32mENERGY TEST DONE!\x1b[0m" << std::endl << std::endl;
     sleep(5);  
     std::cout << "\x1b[5;36mMAX_HEALING TEST STARTED!\x1b[0m" << std::endl;
-    // test3();
+    test3();
     std::cout << "\x1b[1;32mMAX_HEALING TEST DONE!\x1b[0m" << std::endl << std::endl;
     sleep(5);
     std::cout << "\x1b[5;36mCONSTRUCTOR TEST STARTED!\x1b[0m" << std::endl;
