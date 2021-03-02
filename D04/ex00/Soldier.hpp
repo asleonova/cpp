@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Victim.hpp                                         :+:      :+:    :+:   */
+/*   Soldier.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/02 12:09:51 by dbliss            #+#    #+#             */
-/*   Updated: 2021/03/02 12:10:04 by dbliss           ###   ########.fr       */
+/*   Created: 2021/03/02 12:09:13 by dbliss            #+#    #+#             */
+/*   Updated: 2021/03/02 12:13:55 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef VICTIM_H
-#define VICTIM_H
+#ifndef SOLDIER_H
+#define SOLDIER_H
 
 #include <iostream>
+#include "Victim.hpp"
 
-class Victim
+class Soldier : public Victim
 {
     private:
         std::string _name;
     public:
-        Victim(std::string name);
-        Victim(Victim const & src);
-        Victim & operator=(Victim const & rhs);
-        ~Victim(void);
-
-        std::string getName(void) const;
+        Soldier(std::string name);
+        Soldier(Soldier const & src);
+        Soldier & operator=(Soldier const & rhs);
+        std::string getName(void);
         virtual void getPolymorphed() const;
+        ~Soldier(void);
 };
-
-std::ostream & operator<<(std::ostream & o, Victim const & rhs);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/20 16:22:07 by dbliss            #+#    #+#             */
-/*   Updated: 2021/03/01 16:14:16 by dbliss           ###   ########.fr       */
+/*   Updated: 2021/03/01 18:49:28 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 void test(void)
 {
     SuperTrap super("Super");
+    std::cout << super.getEnergyPoints() << std::endl;
+    std::cout << super.getHitPoints() << std::endl;
     super.rangedAttack(super.getName());
     super.vaulthunter_dot_exe(super.getName());
     super.meleeAttack("enemy");
@@ -31,6 +33,8 @@ void test1(void)
     ScavTrap scav("Putin");
     FragTrap frag("Trump");
     NinjaTrap ninja("Xi");
+
+
 
     super.rangedAttack(scav.getName());
     sleep(1);
@@ -50,7 +54,7 @@ void test1(void)
     super.beRepaired(10);
     std::cout << "hp level after .beRepaired(10) func: " << super << std::endl;
     frag.meleeAttack(super.getName());
-    std::cout << "Current hp level of SuperTrap: " << super << std::endl;
+    std::cout << "Current hp level of SuperTrap: " << super.getEnergyPoints() << std::endl;
     super.beRepaired(10);
     std::cout << "hp level after .beRepaired(10) func: " << super << std::endl;
     sleep(1);

@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Peon.cpp                                           :+:      :+:    :+:   */
+/*   Soldier.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/02 12:08:28 by dbliss            #+#    #+#             */
-/*   Updated: 2021/03/02 12:22:32 by dbliss           ###   ########.fr       */
+/*   Created: 2021/03/02 12:08:58 by dbliss            #+#    #+#             */
+/*   Updated: 2021/03/02 12:22:29 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Peon.hpp"
+#include "Soldier.hpp"
 
-Peon::Peon(std::string name) : Victim(name)
+Soldier::Soldier(std::string name) : Victim(name)        
 {
     this->_name = name;
-    std::cout << "Zog zog." << std::endl;
+    std::cout << "I was born." << std::endl;
 }
 
-Peon::Peon(Peon const & src) : Victim(src)
+Soldier::Soldier(Soldier const & src) : Victim(src)
 {
-    std::cout << "Peon Copy constructor called" << std::endl;
+    std::cout << "Soldier Copy constructor called" << std::endl;
     *this = src;
 }
 
-Peon & Peon::operator=(Peon const & rhs)
+Soldier & Soldier::operator=(Soldier const & rhs)
 {
     if (this != &rhs)
     {
@@ -33,17 +33,17 @@ Peon & Peon::operator=(Peon const & rhs)
     return (*this);
 }
 
-std::string Peon::getName(void)
+std::string Soldier::getName(void)
 {
     return this->_name;
 }
 
-void Peon::getPolymorphed() const
+void Soldier::getPolymorphed() const
 {
-    std::cout << this->_name << " has been turned into a \x1b[1;35mpink pony!\x1b[0m" << std::endl;
+    std::cout << this->_name << " has been turned into a \x1b[1;36mblue unicorn!\x1b[0m" << std::endl;
 }
 
-Peon::~Peon(void)
+Soldier::~Soldier(void)
 {
-    std::cout << "Bleuark..." << std::endl;
+    std::cout << "Pfffff..." << std::endl;
 }

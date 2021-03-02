@@ -28,6 +28,16 @@ SuperTrap::SuperTrap(std::string name) : FragTrap(name), NinjaTrap(name)
     std::cout << "SuperTrap constructor called" << std::endl;
 }
 
+int SuperTrap::getHitPoints(void) const
+{
+    return this->_hitPoints;
+}
+
+int SuperTrap::getEnergyPoints(void) const
+{
+    return this->_energyPoints;
+}
+
 SuperTrap::SuperTrap(SuperTrap const & src) : FragTrap(src), NinjaTrap(src)
 {
     std::cout << "SuperTrap copy constructor called" << std::endl;

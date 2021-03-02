@@ -18,8 +18,8 @@ AWeapon & AWeapon::operator=(AWeapon const & rhs)
     if (this != &rhs)
     {
         this->_name = rhs._name;
-        this->_damage = rhs._damage;
         this->_apcost = rhs._apcost;
+        this->_damage = rhs._damage;
     }
     return (*this);
 }

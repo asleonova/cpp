@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Victim.hpp                                         :+:      :+:    :+:   */
+/*   NuclearBomb.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/02 12:09:51 by dbliss            #+#    #+#             */
-/*   Updated: 2021/03/02 12:10:04 by dbliss           ###   ########.fr       */
+/*   Created: 2021/03/02 12:35:31 by dbliss            #+#    #+#             */
+/*   Updated: 2021/03/02 18:36:45 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef VICTIM_H
-#define VICTIM_H
+#ifndef NUCLEAR_BOMB_H
+# define NUCLEAR_BOMB_H
 
-#include <iostream>
+#include "AWeapon.hpp"
 
-class Victim
+class NuclearBomb : public AWeapon
 {
-    private:
-        std::string _name;
     public:
-        Victim(std::string name);
-        Victim(Victim const & src);
-        Victim & operator=(Victim const & rhs);
-        ~Victim(void);
+        NuclearBomb();
+        NuclearBomb(NuclearBomb const & src);
+        NuclearBomb & operator=(NuclearBomb const & rhs);
+        ~NuclearBomb();
 
-        std::string getName(void) const;
-        virtual void getPolymorphed() const;
+        virtual void attack() const;
+
 };
-
-std::ostream & operator<<(std::ostream & o, Victim const & rhs);
 
 #endif
