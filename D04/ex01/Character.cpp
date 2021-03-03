@@ -6,7 +6,7 @@
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 15:18:40 by dbliss            #+#    #+#             */
-/*   Updated: 2021/03/02 20:38:41 by dbliss           ###   ########.fr       */
+/*   Updated: 2021/03/03 14:39:41 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ Character & Character::operator=(Character const & rhs)
     if (this != &rhs)
     {
         this->_name = rhs._name;
+        this->_apNumber = rhs._apNumber;
+        this->_weapon = rhs._weapon;
     }
     return (*this);
 }
@@ -66,12 +68,12 @@ void Character::attack(Enemy *target)
 {
     if (this->_weapon == NULL)
     {
-        std::cout << "\x1b[1;31You have no weapon and can't attack, get yourself a weapon first\x1b[0m" << std::endl;
+        std::cout << "\x1b[1;31mYou have no weapon and can't attack, get yourself a weapon first\x1b[0m" << std::endl;
         return ;
     }
     if (this->_apNumber < this->_weapon->getAPCost())
     {
-        std::cout << "\x1b[1;31Your AP level is too low to attack\x1b[0m" << std::endl; 
+        std::cout << "\x1b[1;31mYour AP level is too low to attack\x1b[0m" << std::endl; 
         return ;
     }
     //Substract to the enemy's HP the damage value of the weapon
@@ -91,16 +93,19 @@ void Character::attack(Enemy *target)
 std::string Character::WeaponMessage() const
 {
     if (this->_weapon == NULL)
-        return ("and is unarmed");
-    else 
-        return (this->getWeaponName());
+        return ("is unarmed");
+    else
+    {
+        std::string ret = "wields a " + this->getWeaponName();
+        return (ret);
+    }
 }
 std::ostream & operator<<(std::ostream & o, Character const & rhs)
 {
     o << rhs.getName();
     o << " has ";
     o << rhs.getApNumber();
-    o << " AP and wields a ";
+    o << " AP and ";
     o << rhs.WeaponMessage() << std::endl;
     return o;
 }
