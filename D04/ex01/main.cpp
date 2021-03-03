@@ -6,7 +6,7 @@
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 13:31:49 by dbliss            #+#    #+#             */
-/*   Updated: 2021/03/03 16:01:54 by dbliss           ###   ########.fr       */
+/*   Updated: 2021/03/03 20:07:17 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,6 @@ void advancedTest(void)
     wow->attack(pony);
     std::cout << "\x1b[1;34mTesting Wow1 without a weapon (can't attack)\x1b[0m" << std::endl;
     std::cout << *wow1;
-    wow1->attack(mutant);
 
     std::cout << "\x1b[1;34mEquiping Wow1 with a weapon Nuclear bomb\x1b[0m" << std::endl;
     wow1->equip(&nb);
