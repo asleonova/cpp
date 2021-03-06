@@ -6,7 +6,7 @@
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 18:07:01 by dbliss            #+#    #+#             */
-/*   Updated: 2021/03/04 18:34:51 by dbliss           ###   ########.fr       */
+/*   Updated: 2021/03/06 18:32:42 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ class Character : public ICharacter
     private:
         std::string _name;
         AMateria *materias[4];
+        Character() {}
     public:
         Character(std::string name);
         virtual ~Character();
@@ -30,6 +31,7 @@ class Character : public ICharacter
         virtual void equip(AMateria *m);
         virtual void unequip(int idx);
         virtual void use(int idx, ICharacter & target);
+        const AMateria* getMateria(int index) const;
 };
 
 #endif
