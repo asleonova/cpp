@@ -6,7 +6,7 @@
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 16:16:41 by dbliss            #+#    #+#             */
-/*   Updated: 2021/03/04 20:04:03 by dbliss           ###   ########.fr       */
+/*   Updated: 2021/03/06 11:22:12 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class AMateria
 private:
     unsigned int _xp;
     std::string _type;
+    AMateria() {}
 
 public:
     AMateria(std::string const &type);

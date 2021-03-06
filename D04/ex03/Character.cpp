@@ -6,7 +6,7 @@
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 18:19:25 by dbliss            #+#    #+#             */
-/*   Updated: 2021/03/04 20:00:48 by dbliss           ###   ########.fr       */
+/*   Updated: 2021/03/06 18:33:21 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ Character::Character(std::string name) : _name(name)
 
 Character::~Character()
 {
-
+    for (int i = 0; i < 4; i++)
+        delete this->materias[i];
 }
 
 Character::Character(Character const & src)
@@ -35,10 +36,10 @@ Character & Character::operator=(Character const & rhs)
     if (this != &rhs)
     {
         for (int i = 0; i < 4; i++)
+        {
             delete this->materias[i];
-    //    delete this->materias;
-        for (int i = 0; i < 4; i++)
             this->materias[i] = rhs.materias[i];
+        }
         this->_name = rhs._name;
     }
     return (*this);    
@@ -64,17 +65,30 @@ void Character::equip(AMateria *m)
 
 void Character::unequip(int idx)
 {
-    if (idx < 0 && idx > 3) // make an error message
+    if (idx < 0 || idx > 3)
+    {
+        std::cout << "\x1b[31mIndex of materia out of range, try from 0 to 3\x1b[0m" << std::endl;
         return ;
-    if (this->materias[idx])
-        delete materias[idx];
+    } 
+    materias[idx] = nullptr;
 }
 
 void Character::use(int idx, ICharacter & target)
 {
-    if (idx < 0 && idx > 3)
-        return ; // make an error message!!!!!!!
-    this->materias[idx]->use(target);
+    if (idx < 0 || idx > 3)
+    {
+        std::cout << "\x1b[31mIndex of materia out of range, try from 0 to 3\x1b[0m" << std::endl;
+        return ;
+    }
+    if (materias[idx] != nullptr)
+        this->materias[idx]->use(target);
+}
+
+const AMateria* Character::getMateria(int index) const
+{
+    if (index < 0 || index > 3)
+        return nullptr; 
+    return this->materias[index];
 }
 
 

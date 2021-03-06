@@ -6,20 +6,20 @@
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 16:27:21 by dbliss            #+#    #+#             */
-/*   Updated: 2021/03/04 20:03:46 by dbliss           ###   ########.fr       */
+/*   Updated: 2021/03/06 17:40:49 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
 
-AMateria::AMateria(std::string const & type) : _type(type), _xp(0)
+AMateria::AMateria(std::string const & type) :  _xp(0), _type(type)
 {
 
 }
 
 AMateria::~AMateria()
 {
-
+    
 }
 
 AMateria::AMateria(AMateria const & src)
@@ -49,5 +49,5 @@ unsigned int AMateria::getXP() const
 
 void AMateria::use(ICharacter &target)
 {
-    
+    (void)target;    
 }
