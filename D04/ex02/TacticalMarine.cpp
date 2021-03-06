@@ -6,7 +6,7 @@
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 19:56:56 by dbliss            #+#    #+#             */
-/*   Updated: 2021/03/03 20:14:11 by dbliss           ###   ########.fr       */
+/*   Updated: 2021/03/06 20:58:29 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,12 @@ TacticalMarine::~TacticalMarine()
 TacticalMarine::TacticalMarine(TacticalMarine const & src)
 {
     *this = src;    
+}
+
+TacticalMarine & TacticalMarine::operator=(TacticalMarine const & rhs)
+{
+    (void)rhs;
+    return(*this);
 }
 
 ISpaceMarine* TacticalMarine::clone() const

@@ -6,7 +6,7 @@
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 19:12:08 by dbliss            #+#    #+#             */
-/*   Updated: 2021/03/03 19:19:22 by dbliss           ###   ########.fr       */
+/*   Updated: 2021/03/06 20:59:34 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define I_SQUAD_H
 
 #include <iostream>
+#include "ISpaceMarine.hpp"
 
 class ISquad
 {
