@@ -6,7 +6,7 @@
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 15:18:44 by dbliss            #+#    #+#             */
-/*   Updated: 2021/03/02 17:57:07 by dbliss           ###   ########.fr       */
+/*   Updated: 2021/03/08 17:29:16 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ class Character
         std::string _name;
         int _apNumber;
         AWeapon *_weapon;
+        Character() {}
         
-
     public:
         Character(std::string const & name);
         Character(Character const & src);

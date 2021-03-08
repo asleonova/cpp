@@ -6,7 +6,7 @@
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 11:40:59 by dbliss            #+#    #+#             */
-/*   Updated: 2021/03/06 18:20:34 by dbliss           ###   ########.fr       */
+/*   Updated: 2021/03/08 17:31:47 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,7 @@ MateriaSource::~MateriaSource()
 {
     for (int i = 0; i < 4; i++)
     {
-       // if (this->materiasTypes[i] != nullptr)
-            delete this->materiasTypes[i];
+        delete this->materiasTypes[i];
     }
 }
 

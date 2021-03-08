@@ -6,7 +6,7 @@
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 19:12:35 by dbliss            #+#    #+#             */
-/*   Updated: 2021/03/06 19:22:22 by dbliss           ###   ########.fr       */
+/*   Updated: 2021/03/08 17:34:06 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@
 #include "AMateria.hpp"
 #include "Cure.hpp"
 #include "MateriaSource.hpp"
-
-#include <unistd.h>
 
 void basicTest()
 {
@@ -71,7 +69,7 @@ void advancedTest()
     std::cout << "Creating new character 'bob'" << std::endl;
     ICharacter *bob = new Character("bob");
 
-    std::cout << "Use the materias for our characters (can't use 3th because we deleted it" << std::endl;
+    std::cout << "Use the materias for our characters (can't use 3rd because we deleted it, so only 3 messages should appear: 0, 1, 2)" << std::endl;
     me->use(0, *bob);
     me->use(1, *bob);
     me->use(2, *bob);
@@ -89,6 +87,5 @@ int main()
     std::cout << "\x1b[5;36mADVANCED TEST STARTED!\x1b[0m" << std::endl;
     advancedTest();
     std::cout << std::endl << "\x1b[1;32mADVANCED TEST DONE!\x1b[0m" << std::endl << std::endl;
-    sleep(50);
     return 0;
 }

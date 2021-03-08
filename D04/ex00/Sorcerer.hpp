@@ -6,7 +6,7 @@
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 12:09:34 by dbliss            #+#    #+#             */
-/*   Updated: 2021/03/02 12:09:36 by dbliss           ###   ########.fr       */
+/*   Updated: 2021/03/08 17:23:12 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class Sorcerer
     private:
         std::string _name;
         std::string _title;
+        Sorcerer () {}
     public:
         Sorcerer(std::string name, std::string title);
         Sorcerer(Sorcerer const & src);

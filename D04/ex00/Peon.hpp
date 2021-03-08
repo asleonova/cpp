@@ -6,7 +6,7 @@
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 12:08:43 by dbliss            #+#    #+#             */
-/*   Updated: 2021/03/02 12:08:45 by dbliss           ###   ########.fr       */
+/*   Updated: 2021/03/08 17:27:03 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 class Peon : public Victim
 {
     private:
+        Peon();
         std::string _name;
     public:
         Peon(std::string name);
@@ -29,5 +30,4 @@ class Peon : public Victim
         ~Peon(void);
 };
 
-//std::ostream & operator<<(std::ostream & o, Peon const & rhs);
 #endif

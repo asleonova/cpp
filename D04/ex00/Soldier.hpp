@@ -6,7 +6,7 @@
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 12:09:13 by dbliss            #+#    #+#             */
-/*   Updated: 2021/03/02 12:13:55 by dbliss           ###   ########.fr       */
+/*   Updated: 2021/03/08 17:26:53 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 class Soldier : public Victim
 {
     private:
+        Soldier();
         std::string _name;
     public:
         Soldier(std::string name);

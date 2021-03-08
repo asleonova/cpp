@@ -9,6 +9,7 @@ class AWeapon
         std::string _name;
         int _apcost;
         int _damage;
+        AWeapon() {}
         
     public:
         AWeapon(std::string const & name, int apcost, int damage);

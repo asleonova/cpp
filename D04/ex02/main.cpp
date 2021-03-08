@@ -6,7 +6,7 @@
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 16:00:08 by dbliss            #+#    #+#             */
-/*   Updated: 2021/03/06 21:44:00 by dbliss           ###   ########.fr       */
+/*   Updated: 2021/03/08 17:32:24 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 #include "ISpaceMarine.hpp"
 #include "AssaultTerminator.hpp"
 #include "TacticalMarine.hpp"
-
-#include <unistd.h>
 
 void basicTest(void)
 {
@@ -77,7 +75,5 @@ int main()
     std::cout << std::endl
               << "\x1b[1;32mADVANCED TEST DONE!\x1b[0m" << std::endl
               << std::endl;
-    sleep(50);
-
     return 0;
 }

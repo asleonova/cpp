@@ -6,7 +6,7 @@
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 13:55:34 by dbliss            #+#    #+#             */
-/*   Updated: 2021/03/02 17:57:29 by dbliss           ###   ########.fr       */
+/*   Updated: 2021/03/08 17:29:37 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ class Enemy
     private:
         int _hp;
         std::string _type;
+        Enemy() {}
     public:
         Enemy(int hp, std::string const & type);
         Enemy(Enemy const & src);
