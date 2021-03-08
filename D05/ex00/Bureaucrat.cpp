@@ -6,7 +6,7 @@
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 19:43:25 by dbliss            #+#    #+#             */
-/*   Updated: 2021/03/07 20:25:14 by dbliss           ###   ########.fr       */
+/*   Updated: 2021/03/08 20:56:11 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ Bureaucrat &Bureaucrat::operator=(Bureaucrat const &rhs)
 
 std::ostream &operator<<(std::ostream &o, Bureaucrat const &i)
 {
-    o << "Name = " << i.getName();
+    o << "Name: " << i.getName();
     o << std::endl
       << "Current level: " << i.getGrade();
     return o;
@@ -58,7 +58,7 @@ std::ostream &operator<<(std::ostream &o, Bureaucrat const &i)
 ** --------------------------------- METHODS ----------------------------------
 */
 
-std::string const &Bureucrat::getName() const
+std::string const &Bureaucrat::getName() const
 {
     return this->_name;
 }
@@ -70,14 +70,14 @@ int Bureaucrat::getGrade() const
 
 void Bureaucrat::IncrementGrade()
 {
-    if (this->_grade < 1)
+    if (this->_grade - 1  < 1 || this->_grade < 1)
         throw Bureaucrat::GradeTooHighException();
     this->_grade -= 1;
 }
 
 void Bureaucrat::DecrementGrade()
 {
-    if (this->_grade > 150)
+    if (this->_grade + 1 > 150 || this->_grade > 150)
         throw Bureaucrat::GradeTooLowException();
     this->_grade += 1;
 }
