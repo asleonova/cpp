@@ -6,7 +6,7 @@
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 19:43:25 by dbliss            #+#    #+#             */
-/*   Updated: 2021/03/09 15:06:05 by dbliss           ###   ########.fr       */
+/*   Updated: 2021/03/09 15:21:34 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade)
+Bureaucrat::Bureaucrat(std::string name, unsigned int grade) : _name(name), _grade(grade)
 {
     if (this->_grade > 150)
         throw Bureaucrat::GradeTooLowException();
@@ -58,16 +58,6 @@ std::ostream &operator<<(std::ostream &o, Bureaucrat const &i)
 ** --------------------------------- METHODS ----------------------------------
 */
 
-std::string const &Bureaucrat::getName() const
-{
-    return this->_name;
-}
-
-int Bureaucrat::getGrade() const
-{
-    return this->_grade;
-}
-
 void Bureaucrat::IncrementGrade()
 {
     if (this->_grade - 1  < 1 || this->_grade < 1)
@@ -82,8 +72,32 @@ void Bureaucrat::DecrementGrade()
     this->_grade += 1;
 }
 
+void Bureaucrat::signForm(Form & form)
+{
+    try
+    {
+        form.beSigned(*this);    
+        std::cout << this->getName() << " signs " << form.getName() << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cout << this->getName() << " cannot sign " << form.getName() << " because " << e.what() << std::endl;
+    }
+    
+}
+
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
+std::string const &Bureaucrat::getName() const
+{
+    return this->_name;
+}
+
+unsigned int Bureaucrat::getGrade() const
+{
+    return this->_grade;
+}
+
 
 /* ************************************************************************** */
