@@ -6,7 +6,7 @@
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 12:10:26 by dbliss            #+#    #+#             */
-/*   Updated: 2021/03/10 16:13:33 by dbliss           ###   ########.fr       */
+/*   Updated: 2021/03/10 21:05:25 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,15 @@ class Form
 		unsigned int const _sign_grade;
 		unsigned int const _exec_grade;
 		
-		Form() {}
+		Form();
 		Form &		operator=( Form const & rhs );
 	public:
 
 		Form(std::string name, unsigned int sign_grade, unsigned int exec_grade);	
 		Form( Form const & src );
 		virtual ~Form();
+
+		virtual void execute(Bureaucrat const & executor) const = 0;
 
 		std::string getName() const;
 		unsigned int getSignGrade() const;
@@ -59,6 +61,14 @@ class Form
                 return ("The grade is to low, the min level is 150");
             }
         };
+
+		class FormNotSignedException : public std::exception
+		{
+			virtual const char* what() const throw()
+			{
+				return ("The form wasn't signed");
+			}
+		};
 };
 
 std::ostream &			operator<<( std::ostream & o, Form const & i );
