@@ -6,7 +6,7 @@
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 12:10:26 by dbliss            #+#    #+#             */
-/*   Updated: 2021/03/10 21:05:25 by dbliss           ###   ########.fr       */
+/*   Updated: 2021/03/11 13:21:34 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ class Form
 		{
 			virtual const char* what() const throw()
 			{
-				return ("The grade is to high, the max level is 1");
+				return ("The grade is to high!");
 			}
 		};
 
@@ -58,7 +58,7 @@ class Form
         {
             virtual const char* what() const throw()
             {
-                return ("The grade is to low, the min level is 150");
+                return ("The grade is to low!");
             }
         };
 

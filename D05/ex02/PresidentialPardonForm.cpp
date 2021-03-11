@@ -6,7 +6,7 @@
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 15:39:45 by dbliss            #+#    #+#             */
-/*   Updated: 2021/03/10 20:39:31 by dbliss           ###   ########.fr       */
+/*   Updated: 2021/03/11 13:39:26 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ PresidentialPardonForm::PresidentialPardonForm(std::string target):
 
 PresidentialPardonForm::PresidentialPardonForm( const PresidentialPardonForm & src ) : Form(src)
 {
-	*this = src;
+	this->_target = src._target;
 }
 
 

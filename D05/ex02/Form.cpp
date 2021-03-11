@@ -6,7 +6,7 @@
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 12:10:26 by dbliss            #+#    #+#             */
-/*   Updated: 2021/03/10 21:06:54 by dbliss           ###   ########.fr       */
+/*   Updated: 2021/03/11 13:21:07 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,8 +79,8 @@ void Form::execute(Bureaucrat const & executor) const
 {
 	if(!this->_signed)
 		throw Form::FormNotSignedException();
-	if (executor.getGrade() > this->_sign_grade)
-		throw Bureaucrat::GradeTooLowException();
+	if (executor.getGrade() > this->_exec_grade)
+		throw Form::GradeTooLowException();
 }
 
 /*

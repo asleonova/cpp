@@ -6,19 +6,22 @@
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 19:41:23 by dbliss            #+#    #+#             */
-/*   Updated: 2021/03/10 21:22:29 by dbliss           ###   ########.fr       */
+/*   Updated: 2021/03/11 13:57:15 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
 
 void functionalityTest(void)
 {
     unsigned int x;
     unsigned int sign_grade;
     unsigned int exec_grade;
+    unsigned int idx_f;
     std::string f_name;
     std::string b_name;
 
@@ -37,12 +40,23 @@ void functionalityTest(void)
     try
     {
         Bureaucrat b(b_name, x);
-        ShrubberyCreationForm fo("lala");
-        //fo.execute(b);
         std::cout << "Bureaucrat successfully created! Here are the characteristics: " << std::endl;
         std::cout << b << std::endl;
         
-        std::cout << "The form successfully created! Here are the characteristics: " << std::endl;
+        std::cout << "Now we need to create a form to sign. Which form do you want to create? Enter index: " << std::endl;
+        std::cout << "0 - for Shubbery Creation Form" << std::endl;
+        std::cout << "1 - for Robotomy Request Form" << std::endl;
+        std::cout << "2 - for Presidential Pardon Form" << std::endl;
+        std::cin >> idx_f;
+        if (idx_f == 0)
+            ShrubberyCreationForm fo("lala");
+        else if (idx_f == 1)
+            RobotomyRequestForm fo("lala");
+        else if (idx_f == 2)
+            PresidentialPardonForm fo("lala");
+        else 
+            std::cout << "Index out of range!" << std::endl;
+        std::cout << "Form successfully created! Here are the characteristics: " << std::endl;
         std::cout << fo << std::endl;
 
         std::cout << CLGREEN << "Now let's try to decrement on the value the user asks us" << CLEND << std::endl;
@@ -71,16 +85,20 @@ void functionalityTest(void)
         {
             std::cerr << CLRED << e.what() << CLEND << '\n';
         }
-        // try
-        // {
-        //     b.signForm(fo);
-        // }
-        // catch(const std::exception& e)
-        // {
-        //     std::cerr << CLRED << e.what() << CLEND << '\n';
-        // }
-       // for (int i = 0; i < 100; i++)
-         //   b.DecrementGrade();
+        try
+        {
+            std::cout << CLGREEN << "Let's try to sign the form" << CLEND << std::endl;
+            b.signForm(fo);
+        }
+        catch(const std::exception& e)
+        {
+            std::cerr << CLRED << e.what() << CLEND << '\n';
+        }
+        std::cout << CLGREEN << "You can decrement the Bureucrat value, but always remember that if it's too low, the form can't be executed!" << CLEND << std::endl;
+        std::cout << CLGREEN << "Please enter the number to decrement: " << CLEND;
+        std::cin >> x;
+        for (unsigned int i = 0; i < x; i++) 
+            b.DecrementGrade();
         fo.execute(b);
     }
     catch (const std::exception &e)
