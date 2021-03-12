@@ -6,7 +6,7 @@
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 16:14:26 by dbliss            #+#    #+#             */
-/*   Updated: 2021/03/11 19:42:56 by dbliss           ###   ########.fr       */
+/*   Updated: 2021/03/12 16:44:30 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ Intern::~Intern()
 
 Intern &				Intern::operator=( Intern const & rhs )
 {
+	(void)rhs;
 	return *this;
 }
 
@@ -57,8 +58,12 @@ Form* Intern::makeForm(std::string const name, std::string const target)
 		"shrubbery creation request"
 	};
 	
-	
-	static Form* (forms[3]) = {
+	/*
+	createNewForm are static methods of different classes which allow
+	us to use them here, in different class, without initializing the object of a class
+	*/
+
+	Form* (forms[3]) = {
 		RobotomyRequestForm::createNewForm(target),
 		PresidentialPardonForm::createNewForm(target),
 		ShrubberyCreationForm::createNewForm(target)		
@@ -68,12 +73,14 @@ Form* Intern::makeForm(std::string const name, std::string const target)
 	{
 		if (type_names[i] == name)
 		{
-			std::cout << "Intern creates " << forms[i] << std::endl;
+			std::cout << "Intern creates " << forms[i]->getName() << std::endl;
 			return forms[i];
 		}
 
 	}
-	// ERROR MESSAGE HERE!!!
+	std::cout << CLRED << "Sorry, the requested form is unknown...Intern only knows these following forms :" << CLEND << std::endl;
+	std::cout << CLBLUE << "'robotomy request' , 'presidential pardon request', 'shrubbery creation request'" << CLEND << std::endl; 
+	return (nullptr);
 }
 
 /*
