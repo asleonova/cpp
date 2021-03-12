@@ -6,7 +6,7 @@
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 16:14:26 by dbliss            #+#    #+#             */
-/*   Updated: 2021/03/12 16:44:30 by dbliss           ###   ########.fr       */
+/*   Updated: 2021/03/12 19:40:21 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ Intern &				Intern::operator=( Intern const & rhs )
 
 Form* Intern::makeForm(std::string const name, std::string const target)
 {
+
+	Form *tmp;
 	std::string type_names[3] = {
 		"robotomy request",
 		"presidential pardon request",
@@ -63,18 +65,19 @@ Form* Intern::makeForm(std::string const name, std::string const target)
 	us to use them here, in different class, without initializing the object of a class
 	*/
 
-	Form* (forms[3]) = {
-		RobotomyRequestForm::createNewForm(target),
-		PresidentialPardonForm::createNewForm(target),
-		ShrubberyCreationForm::createNewForm(target)		
+	Form* (*forms[3])(std::string target) = {
+		RobotomyRequestForm::createNewForm,
+		PresidentialPardonForm::createNewForm,
+		ShrubberyCreationForm::createNewForm
 	};
 	
 	for (int i = 0; i < 3; i++)
 	{
 		if (type_names[i] == name)
 		{
-			std::cout << "Intern creates " << forms[i]->getName() << std::endl;
-			return forms[i];
+			tmp = forms[i](target);
+			std::cout << "Intern creates " << tmp->getName() << std::endl;
+			return tmp;
 		}
 
 	}

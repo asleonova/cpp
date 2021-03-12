@@ -6,7 +6,7 @@
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 19:41:23 by dbliss            #+#    #+#             */
-/*   Updated: 2021/03/12 18:05:02 by dbliss           ###   ########.fr       */
+/*   Updated: 2021/03/12 19:34:50 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ void functionalityTest(void)
             for (unsigned int i = 0; i < x; i++)
                 b.DecrementGrade();
             f1->execute(b);
+            delete f1;
         }
     }
     catch (const std::exception &e)
@@ -72,10 +73,12 @@ void functionalityTest(void)
     }
 }
 
+#include <unistd.h>
 int main()
 {
     std::cout << CLBLUE << "*** FUNCTIONALITY TEST STARTED ****" << CLEND << std::endl;
     functionalityTest();
+    sleep(50);
     std::cout << std::endl << CLBLUE << "//// FUNCTIONALITY TEST END ////" << CLEND << std::endl;
     return 0;
 }
