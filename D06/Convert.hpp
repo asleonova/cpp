@@ -6,7 +6,7 @@
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 23:07:50 by dbliss            #+#    #+#             */
-/*   Updated: 2021/03/12 23:46:07 by dbliss           ###   ########.fr       */
+/*   Updated: 2021/03/14 19:49:54 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,22 +25,34 @@ class Convert
 		float _float;
 		double _double;
 		char _char;
+		bool _isChar;
+		bool _possible;
+		std::string _input2;
 		
+		void convert_to_int();
+		void convert_to_double();
+		void convert_to_float();
+		void convert_to_char();	
+		void parser();
+	
 	public:
 		Convert(char* input);
 		Convert( Convert const & src );
 		~Convert();
-		int convert_to_int();
-		double convert_to_double();
-		float convert_to_float();
-		char convert_to_char();
-		
 
+
+		double getDouble() const;
+		float getFloat() const;
+		int getInt() const;
+		char getChar() const;
+		bool getIfChar() const;
+		bool getIfPossible() const;
+		
 		Convert &		operator=( Convert const & rhs );
 
 
 };
 
-// std::ostream &			operator<<( std::ostream & o, Convert const & i );
+ std::ostream &			operator<<( std::ostream & o, Convert const & i );
 
 #endif /* ********************************************************* CONVERT_H */
