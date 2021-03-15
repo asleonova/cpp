@@ -6,7 +6,7 @@
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/14 20:10:43 by dbliss            #+#    #+#             */
-/*   Updated: 2021/03/15 13:52:17 by dbliss           ###   ########.fr       */
+/*   Updated: 2021/03/15 13:52:13 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ Data * deserialize(void * raw)
 int main()
 {
     void *Sdata = serialize();
-    std::cout << "data after serializing and deserializing: " << std::endl;
+    std::cout << "data after serializing and deserializing: " << std::cout;
     deserialize(Sdata);
     return 0;
 }

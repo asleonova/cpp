@@ -1,0 +1,40 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/02/11 17:59:59 by dbliss            #+#    #+#              #
+#    Updated: 2021/03/15 14:06:36 by dbliss           ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+NAME = convert
+
+INCLUDES = ./
+
+SRCS = ./Convert.cpp ./main.cpp
+
+HEADER = ./Convert.hpp
+
+OBJ = $(SRCS:%.cpp=%.o)
+
+CFLAGS = -Wall -Wextra -Werror -std=c++98
+
+all: $(NAME)
+
+$(NAME): $(OBJ)
+	clang++ -o $(NAME) $(OBJ)
+
+%.o: %.c $(HEADER)
+	clang++ -c $(CFLAGS) -I $(INCLUDES) $< -o $@
+
+clean:
+	rm -f $(OBJ)
+fclean: clean
+	rm -f $(NAME)
+
+re: fclean all
+
+.PHONY: all clean flean re

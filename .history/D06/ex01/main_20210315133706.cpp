@@ -6,7 +6,7 @@
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/14 20:10:43 by dbliss            #+#    #+#             */
-/*   Updated: 2021/03/15 13:52:17 by dbliss           ###   ########.fr       */
+/*   Updated: 2021/03/15 13:37:06 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void* serialize(void) // тут сделать вывод значений!!!!
     char *s_all = const_cast <char*> (all.c_str());
     void *all_new = reinterpret_cast <void *> (s_all);		
 
-    std::cout << "data we want to serialize :" << std::endl;
+    std::cout << "data before serializing :" << std::endl;
     std::cout << "random string 1: " << s1 << std::endl; 
     std::cout << "interger: " << num << std::endl;
     std::cout << "random string 2: " << s2 << std::endl; 
@@ -63,12 +63,9 @@ Data * deserialize(void * raw)
     Data* d = new Data;
     char* new_raw = reinterpret_cast<char*>(raw);
     d->s1 = std::string(new_raw, 10);
-    d->i = static_cast<int>(*(new_raw + 10) - 48) * 10;
-    d->i += static_cast<int>(*(new_raw + 11) - 48);    
-    d->s2 = std::string(new_raw + 12, 20); // add 12 to the adress; 
-    std::cout << "d->s1: " << d->s1 << std::endl;
-    std::cout << "d->i: " << d->i << std::endl;
-    std::cout << "d->s2: "<< d->s2 << std::endl;
+    d->i = *(new_raw + 10) - 48;
+    std::cout << d->s1 << std::endl;
+    std::cout << d->i << std::endl;
     return (d);
     
 }
@@ -77,7 +74,6 @@ Data * deserialize(void * raw)
 int main()
 {
     void *Sdata = serialize();
-    std::cout << "data after serializing and deserializing: " << std::endl;
-    deserialize(Sdata);
+    Data *d = deserialize(Sdata);
     return 0;
 }

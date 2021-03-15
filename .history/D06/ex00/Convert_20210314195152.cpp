@@ -6,7 +6,7 @@
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 23:07:49 by dbliss            #+#    #+#             */
-/*   Updated: 2021/03/15 14:09:13 by dbliss           ###   ########.fr       */
+/*   Updated: 2021/03/14 19:51:53 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ std::ostream &operator<<(std::ostream &o, Convert const &i)
 	{
 
 		o << "float: " << i.getFloat() << "f" << std::endl;
-		o << "double: " << i.getDouble() << std::endl;
+		o << "double: " << i.getDouble();
 	}
 	return o;
 }
