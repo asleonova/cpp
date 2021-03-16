@@ -6,7 +6,7 @@
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/14 20:10:43 by dbliss            #+#    #+#             */
-/*   Updated: 2021/03/16 15:12:05 by dbliss           ###   ########.fr       */
+/*   Updated: 2021/03/16 14:59:28 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ struct Data
     std::string s1;
     int i;
     std::string s2;
+    
 };
 
 std::string RandomString(unsigned long len)
@@ -61,12 +62,7 @@ Data * deserialize(void * raw)
 {
     Data* d = new Data;
     char* new_raw = reinterpret_cast<char*>(raw);
-    std::cout << "**********************" << std::endl;
-    std::cout << "sizes of the data elements: " << std::endl;
-    std::cout << "element 1: " << sizeof(d->s1) << std::endl;
-    std::cout << "element 2: " << sizeof(d->i) << std::endl;
-    std::cout << "element 3: " << sizeof(d->s2) << std::endl;
-    std::cout << "**********************" << std::endl;
+    std::cout << "arr size is: " << sizeof(new_raw) << std::end;
     d->s1 = std::string(new_raw, 10);
     d->i = static_cast<int>(*(new_raw + 10) - 48) * 10;
     d->i += static_cast<int>(*(new_raw + 11) - 48);    
