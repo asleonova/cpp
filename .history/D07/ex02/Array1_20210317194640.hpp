@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Array.hpp                                          :+:      :+:    :+:   */
+/*   Array1.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 20:24:27 by dbliss            #+#    #+#             */
-/*   Updated: 2021/03/17 20:32:58 by dbliss           ###   ########.fr       */
+/*   Updated: 2021/03/17 19:46:40 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ Array<T>::Array(unsigned int n) : _n(n)
 {
     this->_arr = new T[_n];
     for (int i = 0; i < this->_n; i++)
-        this->_arr[i] = '0';
+        this->_arr[i] = i;
 }
 
 /* Destructor*/
@@ -81,7 +81,7 @@ T* Array<T>::getArr(void) const { return this->_arr; }
 template <typename T>
 Array<T> & Array<T>::operator=(Array const &rhs)
 {
-    if (this != &rhs)
+    if (this != rhs)
     {
         delete[] this->_arr;
         this->_arr = new T[rhs._n];

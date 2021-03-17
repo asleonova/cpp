@@ -6,7 +6,7 @@
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 20:24:30 by dbliss            #+#    #+#             */
-/*   Updated: 2021/03/17 21:12:50 by dbliss           ###   ########.fr       */
+/*   Updated: 2021/03/17 20:41:37 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -294,6 +294,5 @@ int main(void)
 	StringTest();
 	FloatTest();
 	CharTest();
-	sleep(50);
 	return (0);
 }

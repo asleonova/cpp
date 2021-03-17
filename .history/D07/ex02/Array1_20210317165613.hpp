@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Array.hpp                                          :+:      :+:    :+:   */
+/*   Array1.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 20:24:27 by dbliss            #+#    #+#             */
-/*   Updated: 2021/03/17 20:32:58 by dbliss           ###   ########.fr       */
+/*   Updated: 2021/03/17 16:56:13 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,9 @@ public:
     ~Array(void);
     Array(Array const &src);
     Array &operator=(Array const &rhs);
-    unsigned int const size(void) const;
+    unsigned int const &size(void) const;
     T *getArr(void) const;
-    T &operator[](unsigned int index) const;
-    T &operator[](unsigned int index);
+    T &operator[](unsigned int index) const
 
         private : unsigned int _n;
     T *_arr;
@@ -47,7 +46,7 @@ Array<T>::Array(unsigned int n) : _n(n)
 {
     this->_arr = new T[_n];
     for (int i = 0; i < this->_n; i++)
-        this->_arr[i] = '0';
+        this->_arr[i] = i;
 }
 
 /* Destructor*/
@@ -58,7 +57,6 @@ Array<T>::~Array(void)
         delete[] this->_arr;
 }
 
-/* Copy constructor*/
 template <typename T>
 Array<T>::Array(Array const &src)
 {
@@ -68,20 +66,10 @@ Array<T>::Array(Array const &src)
         this->_arr[i] = src._arr[i];
 }
 
-/*Member functions*/
 template <typename T>
-unsigned int const Array<T>::size(void) const { return this->_n; }
-
-template <typename T>
-T* Array<T>::getArr(void) const { return this->_arr; }
-
-
-/*Assignment operator*/
-
-template <typename T>
-Array<T> & Array<T>::operator=(Array const &rhs)
+Array<T>::&operator=(Array const &rhs)
 {
-    if (this != &rhs)
+    if (*this != rhs)
     {
         delete[] this->_arr;
         this->_arr = new T[rhs._n];
@@ -92,21 +80,29 @@ Array<T> & Array<T>::operator=(Array const &rhs)
     return (*this);
 }
 
-template <typename T>
-T & Array<T>::operator[](unsigned int index) const
+unsigned int const &size(void) const { return this->_n; }
+T const *getArr(void) const { return this->_arr; }
+
+T &operator[](unsigned int index) const
 {
     if (this->_n == 0 || index >= this->_n)
         throw ElementOutOfLimits();
     return (this->_arr[index]);
 }
 
-template <typename T>
-T & Array<T>::operator[](unsigned int index)
+private:
+unsigned int _n;
+T *_arr;
+
+class ElementOutOfLimits : public std::exception
 {
-    if (this->_n == 0 || index >= this->_n)
-        throw ElementOutOfLimits();
-    return (this->_arr[index]);
+    virtual const char *what() const throw()
+    {
+        return ("Element is out of limits");
+    }
+};
 }
+;
 
 template <typename T>
 std::ostream &operator<<(std::ostream &o, Array<T> const &p)

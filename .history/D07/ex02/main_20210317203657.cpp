@@ -6,7 +6,7 @@
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 20:24:30 by dbliss            #+#    #+#             */
-/*   Updated: 2021/03/17 21:12:50 by dbliss           ###   ########.fr       */
+/*   Updated: 2021/03/17 20:36:56 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,9 @@
 void IntTest()
 {
 	std::cout << CLYELLOW << "/* ******************************************** */" << std::endl;
-	std::cout << "	INT TYPE TEST STARTED, YEAAAAH" << std::endl;
+	std::cout << "		INT TYPE TEST STARTED, YEAAAAH" << std::endl;
 	std::cout << "/* ******************************************** */" << CLEND << std::endl;
+	std::cout << "/* ******************************************** */" << std::endl;
 	std::cout << CLBLUE << "Test 1: testing the default constructor:" << CLEND << std::endl;
 	Array<int> arr1;
 	std::cout << "array created!" << std::endl;
@@ -88,10 +89,10 @@ void IntTest()
 void StringTest()
 {
 	std::cout << CLYELLOW << "/* ******************************************** */" << std::endl;
-	std::cout << "	STRING TYPE TEST STARTED, YEAAAAH" << std::endl;
+	std::cout << "		STRING TYPE TEST STARTED, YEAAAAH" << std::endl;
 	std::cout << "/* ******************************************** */" << CLEND << std::endl;
 	std::cout << CLBLUE << "Test 1: testing the default constructor:" << CLEND << std::endl;
-	Array<char> arr1;
+	Array<std::string> arr1;
 	std::cout << "array created!" << std::endl;
 	std::cout << "arr1: " << arr1 << std::endl;
 	std::cout << "/* ******************************************** */" << std::endl;
@@ -156,7 +157,7 @@ void FloatTest()
 {
 	{
 		std::cout << CLYELLOW << "/* ******************************************** */" << std::endl;
-		std::cout << "	FLOAT TYPE TEST STARTED, YEAAAAH" << std::endl;
+		std::cout << "		STRING TYPE TEST STARTED, YEAAAAH" << std::endl;
 		std::cout << "/* ******************************************** */" << CLEND << std::endl;
 		std::cout << CLBLUE << "Test 1: testing the default constructor:" << CLEND << std::endl;
 		Array<float> arr1;
@@ -190,7 +191,7 @@ void FloatTest()
 		std::cout << "/* ******************************************** */" << std::endl;
 		std::cout << CLBLUE << "Test 6: changing the values of an element of an array (valid index):" << CLEND << std::endl;
 		std::cout << "arr3[0] before changing: " << arr3[0] << std::endl;
-		arr3[0] = 666.66;
+		arr3[0] = 666.66666;
 		std::cout << "arr3[0] after changing: " << arr3[0] << std::endl;
 		std::cout << "all array after changing: " << arr3 << std::endl;
 		std::cout << "/* ******************************************** */" << std::endl;
@@ -224,10 +225,10 @@ void FloatTest()
 void CharTest()
 {
 	std::cout << CLYELLOW << "/* ******************************************** */" << std::endl;
-	std::cout << "	CHAR TYPE TEST STARTED, YEAAAAH" << std::endl;
+	std::cout << "		CHAR TYPE TEST STARTED, YEAAAAH" << std::endl;
 	std::cout << "/* ******************************************** */" << CLEND << std::endl;
 	std::cout << CLBLUE << "Test 1: testing the default constructor:" << CLEND << std::endl;
-	Array<char> arr1;
+	Array<std::string> arr1;
 	std::cout << "array created!" << std::endl;
 	std::cout << "arr1: " << arr1 << std::endl;
 	std::cout << "/* ******************************************** */" << std::endl;
@@ -242,23 +243,23 @@ void CharTest()
 	};
 	std::cout << "/* ******************************************** */" << std::endl;
 	std::cout << CLBLUE << "Test 3: creating int array with the size of 5:" << CLEND << std::endl;
-	Array<char> arr2(5);
+	Array<std::string> arr2(5);
 	std::cout << "array created!" << std::endl;
 	std::cout << "arr2: " << arr2 << std::endl;
 	std::cout << "/* ******************************************** */" << std::endl;
 	std::cout << CLBLUE << "Test 4: creating a copy of the previous array:" << CLEND << std::endl;
-	Array<char> arr3(arr2);
+	Array<std::string> arr3(arr2);
 	std::cout << "array copy with the size of 5 created!" << std::endl;
 	std::cout << "arr3: " << arr3 << std::endl;
 	std::cout << "/* ******************************************** */" << std::endl;
 	std::cout << CLBLUE << "Test 5: testing the assignment operator:" << CLEND << std::endl;
-	Array<char> arr4;
+	Array<std::string> arr4;
 	arr4 = arr2;
 	std::cout << "arr4: " << arr4 << std::endl;
 	std::cout << "/* ******************************************** */" << std::endl;
 	std::cout << CLBLUE << "Test 6: changing the values of an element of an array (valid index):" << CLEND << std::endl;
 	std::cout << "arr3[0] before changing: " << arr3[0] << std::endl;
-	arr3[0] = 'a';
+	arr3[0] = "hello beaches";
 	std::cout << "arr3[0] after changing: " << arr3[0] << std::endl;
 	std::cout << "all array after changing: " << arr3 << std::endl;
 	std::cout << "/* ******************************************** */" << std::endl;
@@ -290,10 +291,9 @@ void CharTest()
 
 int main(void)
 {
-	IntTest();
 	StringTest();
+	IntTest();
 	FloatTest();
 	CharTest();
-	sleep(50);
 	return (0);
 }

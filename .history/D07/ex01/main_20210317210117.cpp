@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/16 15:23:44 by dbliss            #+#    #+#             */
-/*   Updated: 2021/03/17 21:07:11 by dbliss           ###   ########.fr       */
+/*   Created: 2021/03/16 15:23:34 by dbliss            #+#    #+#             */
+/*   Updated: 2021/03/17 21:01:17 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "iter.hpp"
 
-template<typename T>
-void iter(T *array, size_t len, void(*func)(T const & element))
+class Awesome
 {
-    for (size_t i = 0; i < len; i++)
-    {
-        func(array[i]);
-    }
-}
+    public:
+    Awesome(void): _n(42) { return; }
+    int get(void) const { return this->_n; }
+    private:
+    int _n;
+};
 
-template<typename T>
-void print(T const & x) { std::cout << x << std::endl; return ; }
+std::ostream & operator << (std::ostream & o, Awesome const & rhs) { o << rhs.get(); return o;}
 
-template<typename T>
-void justRepeat(T const & x)
+int main()
 {
-    std::cout << "Just repeat showing the element one more time, haha: " << x << std::endl;
+    int tab[] = {0,1,2,3,4};
+    Awesome tab2[5];
+
+    iter(tab, 5, print);
+    iter(tab2, 5, print);
+    iter(tab2, 5 )
+    return 0;
 }

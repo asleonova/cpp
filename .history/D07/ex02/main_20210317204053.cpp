@@ -6,7 +6,7 @@
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 20:24:30 by dbliss            #+#    #+#             */
-/*   Updated: 2021/03/17 21:12:50 by dbliss           ###   ########.fr       */
+/*   Updated: 2021/03/17 20:40:53 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -224,7 +224,7 @@ void FloatTest()
 void CharTest()
 {
 	std::cout << CLYELLOW << "/* ******************************************** */" << std::endl;
-	std::cout << "	CHAR TYPE TEST STARTED, YEAAAAH" << std::endl;
+	std::cout << "		CHAR TYPE TEST STARTED, YEAAAAH" << std::endl;
 	std::cout << "/* ******************************************** */" << CLEND << std::endl;
 	std::cout << CLBLUE << "Test 1: testing the default constructor:" << CLEND << std::endl;
 	Array<char> arr1;
@@ -290,10 +290,9 @@ void CharTest()
 
 int main(void)
 {
-	IntTest();
 	StringTest();
+	IntTest();
 	FloatTest();
 	CharTest();
-	sleep(50);
 	return (0);
 }

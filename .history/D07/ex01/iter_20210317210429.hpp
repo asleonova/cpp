@@ -6,14 +6,14 @@
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 15:23:44 by dbliss            #+#    #+#             */
-/*   Updated: 2021/03/17 21:07:11 by dbliss           ###   ########.fr       */
+/*   Updated: 2021/03/17 21:04:29 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
 template<typename T>
-void iter(T *array, size_t len, void(*func)(T const & element))
+void iter(T *array, size_t len, void(*func)(T & element))
 {
     for (size_t i = 0; i < len; i++)
     {
@@ -22,10 +22,11 @@ void iter(T *array, size_t len, void(*func)(T const & element))
 }
 
 template<typename T>
-void print(T const & x) { std::cout << x << std::endl; return ; }
+void print(T & x) { std::cout << x << std::endl; return ; }
 
 template<typename T>
-void justRepeat(T const & x)
+void multiplyByItself(T & x)
 {
-    std::cout << "Just repeat showing the element one more time, haha: " << x << std::endl;
+    x *= x;
+    std::cout << x << std::endl;
 }

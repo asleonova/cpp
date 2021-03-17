@@ -6,7 +6,7 @@
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 20:24:27 by dbliss            #+#    #+#             */
-/*   Updated: 2021/03/17 20:32:58 by dbliss           ###   ########.fr       */
+/*   Updated: 2021/03/17 20:30:39 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ Array<T>::Array(unsigned int n) : _n(n)
 {
     this->_arr = new T[_n];
     for (int i = 0; i < this->_n; i++)
-        this->_arr[i] = '0';
+        this->_arr[i] = 0;
 }
 
 /* Destructor*/

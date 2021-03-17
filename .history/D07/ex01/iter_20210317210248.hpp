@@ -6,7 +6,7 @@
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 15:23:44 by dbliss            #+#    #+#             */
-/*   Updated: 2021/03/17 21:07:11 by dbliss           ###   ########.fr       */
+/*   Updated: 2021/03/17 21:02:48 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ template<typename T>
 void print(T const & x) { std::cout << x << std::endl; return ; }
 
 template<typename T>
-void justRepeat(T const & x)
+void multiplyByItself(T const & x)
 {
-    std::cout << "Just repeat showing the element one more time, haha: " << x << std::endl;
+    x *= x;
+    std::cout << x << std::endl;
 }
