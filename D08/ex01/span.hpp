@@ -6,7 +6,7 @@
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 17:57:53 by dbliss            #+#    #+#             */
-/*   Updated: 2021/03/18 19:10:42 by dbliss           ###   ########.fr       */
+/*   Updated: 2021/03/18 19:39:03 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,14 @@
 # include <iostream>
 # include <string>
 # include <vector>
+# include <exception>
 
 class Span
 {
 	private:
 		unsigned int _N;
 		std::vector<int> arr;
+		void noSpanToFind();
 		Span();
 	
 	public:
@@ -35,6 +37,22 @@ class Span
 		void addNumber(int num);
 		int shortestSpan();
 		int longestSpan();
+
+		class ConteinerIsEmptyException : public std::exception
+		{
+			virtual const char* what() const throw()
+            {
+                return ("error: the container is empty :( Add some elements there!");
+            }		
+		};
+
+		class ConteinerHasOnlyOneElementException: public std::exception
+		{
+			virtual const char* what() const throw()
+			{
+				return ("error: the container has only one element. Add more!");
+			}
+		};
 
 };
 

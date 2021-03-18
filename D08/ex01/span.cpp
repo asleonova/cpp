@@ -6,7 +6,7 @@
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 17:57:53 by dbliss            #+#    #+#             */
-/*   Updated: 2021/03/18 19:18:57 by dbliss           ###   ########.fr       */
+/*   Updated: 2021/03/18 19:38:49 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ Span::Span(int n) : _N(n)
 // {
 // }
 
-
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
@@ -33,7 +32,6 @@ Span::Span(int n) : _N(n)
 Span::~Span()
 {
 }
-
 
 /*
 ** --------------------------------- OVERLOAD ---------------------------------
@@ -54,10 +52,16 @@ Span::~Span()
 // // 	return o;
 // // }
 
-
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
+void Span::noSpanToFind()
+{
+	if (arr.empty())
+		throw ConteinerIsEmptyException();
+	if (arr.size() == 1)
+		throw ConteinerHasOnlyOneElementException();
+}
 
 void Span::addNumber(int num)
 {
@@ -72,6 +76,7 @@ void Span::addNumber(int num)
 
 int Span::shortestSpan()
 {
+	noSpanToFind();
 	int smallest = arr[0];
 	for (unsigned int i = 0; i < arr.size(); i++)
 	{
@@ -83,6 +88,7 @@ int Span::shortestSpan()
 
 int Span::longestSpan()
 {
+	noSpanToFind();
 	int longest = arr[0];
 	for (unsigned int i = 0; i < arr.size(); i++)
 	{
@@ -95,6 +101,5 @@ int Span::longestSpan()
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
-
 
 /* ************************************************************************** */
