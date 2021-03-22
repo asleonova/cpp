@@ -6,7 +6,7 @@
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 19:07:33 by dbliss            #+#    #+#             */
-/*   Updated: 2021/03/22 16:25:07 by dbliss           ###   ########.fr       */
+/*   Updated: 2021/03/22 16:14:39 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,24 +58,24 @@ void simpleTest()
     for (int i = 1; i < 10; i++)
         sp.addNumber(i);
     std::cout << CLYELLOW << "Finding shortest and longest span: " << CLEND << std::endl;
-    std::cout << "Sp shortest span: " << sp.shortestSpan() << std::endl;
-    std::cout << "Sp longest span: " << sp.longestSpan() << std::endl;
+    std::cout << sp.shortestSpan() << std::endl;
+    std::cout << sp.longestSpan() << std::endl;
     std::cout << CLYELLOW << "Creating a copy of the span and trying to find shortest and longest span there: " << CLEND << std::endl;
     Span sp1(sp);
-    std::cout << "Sp1 shortest span: " << sp1.shortestSpan() << std::endl;
-    std::cout << "Sp1 longest span: " << sp1.longestSpan() << std::endl;
+    std::cout << sp1.shortestSpan() << std::endl;
+    std::cout << sp1.longestSpan() << std::endl;
     std::cout << "Creating new span with 1 capacity: " << std::endl;
     Span sp2(1);
-    std::cout << CLYELLOW << "Trying to find shortest span at s2 (should throw an exception): " << CLEND << std::endl;
+    std::cout << CLYELLOW << "Trying to add : ..... " << std::endl;
     try
     {
-        sp2.shortestSpan();
+        sp2.addNumber(0);
     }
     catch(const std::exception& e)
     {
         std::cerr << CLRED << e.what() << CLEND << '\n';
     }
-    std::cout << CLYELLOW << "Assign our Sp2 to Sp, then searching longest and shortest span: " << CLEND << std::endl;
+    
     sp2 = sp;
     std::cout << "Sp2 shortest span: " <<  sp2.shortestSpan() << std::endl;
     std::cout << "Sp2 longest span: " << sp2.longestSpan() << std::endl;
@@ -86,23 +86,41 @@ void simpleTest()
     }
     catch(const std::exception& e)
     {
-        std::cerr << CLRED << e.what() << CLEND << '\n';
+        std::cerr << e.what() << '\n';
     }
 }
 
 void bigRangeTest()
 {
-    std::cout << CLYELLOW << "Creating a span with 100.000 capacity" << CLEND << std::endl;
-    Span sp = Span(100000);
-    std::cout << CLYELLOW << "Creating a vector with 100.000 nums" << CLEND << std::endl;
+    Span sp = Span(14);
     std::vector<int> v;
-    for (int i = 0; i < 100000; i++)
+    for (int i = 0; i < 14; i++)
         v.push_back(i);
-    std::cout << CLYELLOW << "Adding this range we've just created to our span ... " << CLEND << std::endl;
+
     sp.addNumber(v.begin(), v.end());
-    std::cout << CLYELLOW << "Finding shortest and longest span in the span: " << CLEND << std::endl;
-    std::cout << "Shortest span: " << sp.shortestSpan() << std::endl;
-    std::cout << "Longest span: " << sp.longestSpan() << std::endl;
+    std::cout << sp.shortestSpan() << std::endl;
+    std::cout << sp.longestSpan() << std::endl;
+
+    sp.addNumber(0);
+    sp.addNumber(1);
+    sp.addNumber(2);
+    sp.addNumber(3);
+    sp.addNumber(4);
+    // sp.addNumber(5);
+    try
+    {
+        //  std::cout << sp1.shortestSpan() << std::endl;
+        std::cout << sp.longestSpan() << std::endl;
+    }
+    catch (const std::exception &e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+
+    sp.addNumber(v.begin(), v.end());
+    //std::cout << sp1.shortestSpan() << std::endl;
+    std::cout << sp.shortestSpan() << std::endl;
+    std::cout << sp.longestSpan() << std::endl;
 }
 
 int main()
@@ -112,7 +130,7 @@ int main()
     std::cout << CLGREEN << "******SIMPLE TEST******" << CLEND << std::endl;
     simpleTest();
     std::cout << CLGREEN << "******BIG RANGE TEST******" << CLEND << std::endl; 
-    bigRangeTest();
+    //bigRangeTest();
     return 0;
 
 }

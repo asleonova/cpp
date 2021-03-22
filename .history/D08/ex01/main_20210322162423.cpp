@@ -6,7 +6,7 @@
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 19:07:33 by dbliss            #+#    #+#             */
-/*   Updated: 2021/03/22 16:25:07 by dbliss           ###   ########.fr       */
+/*   Updated: 2021/03/22 16:24:23 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,6 +113,7 @@ int main()
     simpleTest();
     std::cout << CLGREEN << "******BIG RANGE TEST******" << CLEND << std::endl; 
     bigRangeTest();
+    sleep(50);
     return 0;
 
 }
