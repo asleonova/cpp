@@ -6,7 +6,7 @@
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 17:57:53 by dbliss            #+#    #+#             */
-/*   Updated: 2021/03/21 20:19:00 by dbliss           ###   ########.fr       */
+/*   Updated: 2021/03/22 21:47:16 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <string>
 # include <vector>
 # include <exception>
+#include <algorithm>
 
 class Span
 {
@@ -38,6 +39,8 @@ class Span
 		void addNumber(std::vector<int>::iterator begin, std::vector<int>::iterator end);
 		int shortestSpan();
 		int longestSpan();
+
+		std::vector<int> getArray() const;
 
 		class ConteinerIsEmptyException : public std::exception
 		{
@@ -72,5 +75,8 @@ class Span
 		};	
 
 };
+
+
+std::ostream &operator<<(std::ostream &o, Span const &p);
 
 #endif /* ************************************************************ SPAN_H */

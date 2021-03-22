@@ -6,7 +6,7 @@
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 17:57:53 by dbliss            #+#    #+#             */
-/*   Updated: 2021/03/21 20:20:09 by dbliss           ###   ########.fr       */
+/*   Updated: 2021/03/22 21:47:10 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ Span &Span::operator=(Span const &rhs)
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
+
 void Span::noSpanToFind()
 {
 	if (arr.empty())
@@ -84,29 +85,47 @@ void Span::addNumber(std::vector<int>::iterator begin, std::vector<int>::iterato
 int Span::shortestSpan()
 {
 	noSpanToFind();
-	int smallest = arr[0];
-	for (unsigned int i = 0; i < arr.size(); i++)
+	std::sort(this->arr.begin(), this->arr.end());
+	int shortest = this->arr[1] - this->arr[0];
+	std::vector<int>::iterator it = this->arr.begin();
+	std::vector<int>::iterator ite = this->arr.end();
+	for (; it != ite; it++)
 	{
-		if (arr[i] < smallest)
-			smallest = arr[i];
+		if (int real_shortest = *(it + 1) - *it < shortest)
+			shortest = real_shortest;
 	}
-	return (smallest);
+	return shortest;
 }
 
 int Span::longestSpan()
 {
 	noSpanToFind();
-	int longest = arr[0];
-	for (unsigned int i = 0; i < arr.size(); i++)
-	{
-		if (arr[i] > longest)
-			longest = arr[i];
-	}
+	std::sort(this->arr.begin(), this->arr.end());
+	int longest = *(this->arr.end() - 1) - *(this->arr.begin());
 	return (longest);
+}
+
+std::vector<int> Span::getArray() const
+{
+	return this->arr;
 }
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
+std::ostream &operator<<(std::ostream &o, Span const &p)
+{
+    o << "Numbers in array: "; 
+	std::vector<int>::const_iterator it = p.getArray().begin();
+	std::vector<int>::const_iterator ite = p.getArray().end();
+	for (; it != ite; it++)
+	{
+		o << *it;
+		o << " |";
+	}
+	o << std::endl;
+    return o;
+}
 
-/* ************************************************************************** */
+
+/************************************************************************* */
