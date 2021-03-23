@@ -6,7 +6,7 @@
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 18:03:10 by dbliss            #+#    #+#             */
-/*   Updated: 2021/03/23 12:29:36 by dbliss           ###   ########.fr       */
+/*   Updated: 2021/03/23 12:17:39 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,15 @@
 #include <stack>
 
 template <typename T>
-class MutantStack : public std::stack<T>
+class Mutantstack : public std::stack<T>
 {
 
 public:
-	MutantStack();
-	MutantStack(MutantStack const &src);
-	~MutantStack();
+	Mutantstack();
+	Mutantstack(Mutantstack const &src);
+	~Mutantstack();
 
-	MutantStack &		operator=( MutantStack const & rhs );
+	Mutantstack &		operator=( Mutantstack const & rhs );
 	
 	typedef typename std::stack<T>::container_type::iterator iterator;
 	typedef typename std::stack<T>::container_type::const_iterator const_iterator;
@@ -45,23 +45,23 @@ private:
 };
 
 template <typename T>
-MutantStack<T>::MutantStack()
+Mutantstack<T>::Mutantstack()
 {
 }
 
 template <typename T>
-MutantStack<T>::MutantStack(const MutantStack &src) : std::stack<T>(src)
+Mutantstack<T>::Mutantstack(const Mutantstack &src) : std::stack<T>(src)
 {
 
 }
 
 template <typename T>
-MutantStack<T>::~MutantStack()
+Mutantstack<T>::~Mutantstack()
 {
 }
 
 template <typename T>
-MutantStack<T> & MutantStack<T>::operator=( MutantStack const & rhs )
+Mutantstack<T> & Mutantstack<T>::operator=( Mutantstack const & rhs )
 {
 	if (this != &rhs)
 	{

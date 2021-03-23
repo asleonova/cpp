@@ -6,7 +6,7 @@
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 18:03:44 by dbliss            #+#    #+#             */
-/*   Updated: 2021/03/23 13:15:31 by dbliss           ###   ########.fr       */
+/*   Updated: 2021/03/23 13:13:47 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,6 @@ void reverseIteratorTest()
 {
     MutantStack<int> mstack;
     std::cout << CLYELLOW << "Pushing 10 random numbers to stack ... " << CLEND << std::endl;
-    srand(time(NULL));
     for (int i = 1; i < 10; i++)
         mstack.push(rand() % 100);
     MutantStack<int>::reverse_iterator it = mstack.rbegin();
@@ -87,7 +86,6 @@ void constRevIteratorTest()
 {
     MutantStack<int> mstack;
     std::cout << CLYELLOW << "Pushing 10 random numbers to stack ... " << CLEND << std::endl;
-    srand(time(NULL));
     for (int i = 1; i < 10; i++)
         mstack.push(rand() % 100);
     MutantStack<int>::const_reverse_iterator it = mstack.crbegin();

@@ -6,7 +6,7 @@
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 19:07:33 by dbliss            #+#    #+#             */
-/*   Updated: 2021/03/23 12:55:39 by dbliss           ###   ########.fr       */
+/*   Updated: 2021/03/23 12:54:54 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,13 +93,16 @@ void copyConstructorTest()
 void bigRangeTest()
 {
     std::cout << CLYELLOW << "Creating a span with 100.000 capacity" << CLEND << std::endl;
-    Span sp = Span(100000);
+    Span sp = Span(10);
     std::cout << CLYELLOW << "Creating a vector with 100.000 nums" << CLEND << std::endl;
     std::vector<int> v;
-    for (int i = 0; i < 100000; i++)
-        v.push_back(rand() % 1000000);
+    for (int i = 0; i < 10; i++)
+        v.push_back(rand() % 100);
     std::cout << CLYELLOW << "Adding this range we've just created to our span ... " << CLEND << std::endl;
+    sp.addNumber(5);
+    sp.addNumber(10);
     sp.addNumber(v.begin(), v.end());
+    std::cout << sp << std::endl;
     std::cout << CLYELLOW << "Finding shortest and longest span in the span: " << CLEND << std::endl;
     std::cout << "Shortest span: " << sp.shortestSpan() << std::endl;
     std::cout << "Longest span: " << sp.longestSpan() << std::endl;

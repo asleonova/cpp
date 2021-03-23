@@ -6,7 +6,7 @@
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 19:07:33 by dbliss            #+#    #+#             */
-/*   Updated: 2021/03/23 12:55:39 by dbliss           ###   ########.fr       */
+/*   Updated: 2021/03/23 12:07:45 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,8 @@ void bigRangeTest()
     std::vector<int> v;
     for (int i = 0; i < 100000; i++)
         v.push_back(rand() % 1000000);
+    //for (int i = 0; i < 100000; i++)
+    // std::cout << v[i] << std::endl;
     std::cout << CLYELLOW << "Adding this range we've just created to our span ... " << CLEND << std::endl;
     sp.addNumber(v.begin(), v.end());
     std::cout << CLYELLOW << "Finding shortest and longest span in the span: " << CLEND << std::endl;
@@ -107,13 +109,13 @@ void bigRangeTest()
 
 int main()
 {
-    std::cout << std::endl << CLGREEN << "******SUBJECT TEST******" << CLEND << std::endl << std::endl;
+    std::cout << CLGREEN << "******SUBJECT TEST******" << CLEND << std::endl;
     subjectTest();
-    std::cout << std::endl <<  CLGREEN << "******SIMPLE TEST******" << CLEND << std::endl << std::endl;
+    std::cout << CLGREEN << "******SIMPLE TEST******" << CLEND << std::endl;
     simpleTest();
-    std::cout << std::endl <<CLGREEN << "******COPY CONSTRUCTOR TEST******" << CLEND << std::endl << std::endl;
+    std::cout << CLGREEN << "******COPY CONSTRUCTOR TEST******" << CLEND << std::endl;
     copyConstructorTest();
-    std::cout << std::endl << CLGREEN << "******BIG RANGE TEST******" << CLEND << std::endl << std::endl;
+    std::cout << CLGREEN << "******BIG RANGE TEST******" << CLEND << std::endl;
     bigRangeTest();
     return 0;
 }

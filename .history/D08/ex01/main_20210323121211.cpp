@@ -6,7 +6,7 @@
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 19:07:33 by dbliss            #+#    #+#             */
-/*   Updated: 2021/03/23 12:55:39 by dbliss           ###   ########.fr       */
+/*   Updated: 2021/03/23 12:12:11 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,13 +107,13 @@ void bigRangeTest()
 
 int main()
 {
-    std::cout << std::endl << CLGREEN << "******SUBJECT TEST******" << CLEND << std::endl << std::endl;
+    std::cout << std::endl << CLGREEN << "******SUBJECT TEST******" << CLEND << std::endl;
     subjectTest();
-    std::cout << std::endl <<  CLGREEN << "******SIMPLE TEST******" << CLEND << std::endl << std::endl;
+    std::cout << std::endl <<  CLGREEN << "******SIMPLE TEST******" << CLEND << std::endl;
     simpleTest();
-    std::cout << std::endl <<CLGREEN << "******COPY CONSTRUCTOR TEST******" << CLEND << std::endl << std::endl;
+    std::cout << std::endl <<CLGREEN << "******COPY CONSTRUCTOR TEST******" << CLEND << std::endl;
     copyConstructorTest();
-    std::cout << std::endl << CLGREEN << "******BIG RANGE TEST******" << CLEND << std::endl << std::endl;
+    std::cout << std::endl << CLGREEN << "******BIG RANGE TEST******" << CLEND << std::endl;
     bigRangeTest();
     return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 18:03:44 by dbliss            #+#    #+#             */
-/*   Updated: 2021/03/23 13:15:31 by dbliss           ###   ########.fr       */
+/*   Updated: 2021/03/23 13:14:35 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,6 +115,6 @@ int main()
     std::cout << std::endl
               << CLGREEN << "******CONST REVERSE ITERATOR TEST******" << CLEND << std::endl
               << std::endl;
-    constRevIteratorTest();
+    constRevrIteratorTest();
     return 0;
 }

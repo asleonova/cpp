@@ -6,7 +6,7 @@
 /*   By: dbliss <dbliss@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 18:03:10 by dbliss            #+#    #+#             */
-/*   Updated: 2021/03/23 12:29:36 by dbliss           ###   ########.fr       */
+/*   Updated: 2021/03/23 12:29:09 by dbliss           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 #include <stack>
 
 template <typename T>
-class MutantStack : public std::stack<T>
+class Mutantstack : public std::stack<T>
 {
 
 public:
